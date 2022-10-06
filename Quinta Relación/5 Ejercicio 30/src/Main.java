@@ -55,6 +55,8 @@ public class Main {
                         totalHoras = 24*6 - h1 + h2;
                         System.out.println(totalHoras);
                     }break;
+                    default:
+                        System.out.println("No es un día");
                 }
             }break;
 
@@ -90,6 +92,8 @@ public class Main {
                         totalHoras = 24*5 - h1 + h2;
                         System.out.println(totalHoras);
                     }break;
+                    default:
+                        System.out.println("No es un día");
                 }
             }break;
 
@@ -119,6 +123,8 @@ public class Main {
                         totalHoras = 24*4 - h1 + h2;
                         System.out.println(totalHoras);
                     }break;
+                    default:
+                        System.out.println("No es un día");
                 }
             }break;
 
@@ -143,6 +149,8 @@ public class Main {
                         totalHoras = 24*3 - h1 + h2;
                         System.out.println(totalHoras);
                     }break;
+                    default:
+                        System.out.println("No es un día");
                 }
             }break;
 
@@ -162,6 +170,8 @@ public class Main {
                         totalHoras = 24*2 - h1 + h2;
                         System.out.println(totalHoras);
                     }break;
+                    default:
+                        System.out.println("No es un día");
                 }
             }break;
 
@@ -176,6 +186,8 @@ public class Main {
                         totalHoras = 24 - h1 + h2;
                         System.out.println(totalHoras);
                     }break;
+                    default:
+                        System.out.println("No es un día");
                 }
             }break;
 
@@ -185,6 +197,8 @@ public class Main {
                         totalHoras = h2 - h1;
                         System.out.println(totalHoras);
                     }break;
+                    default:
+                        System.out.println("No es un día");
                 }
             }break;
         }
