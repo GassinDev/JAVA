@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner reader = new Scanner(System.in);
 
         int n,vol= 0;
@@ -14,7 +15,6 @@ public class Main {
             vol = (vol * 10) + (n % 10);
             n /= 10;
         }
-
-        System.out.println(vol);
+        System.out.print("Nos quedaría el " + vol);
     }
 }
