@@ -15,6 +15,7 @@ public class Main {
 
             if(i == 0){
                 System.out.println("Te has quedado sin intentos");
+                System.out.println("El número era " + n);
                 break;
             }
             System.out.println("Te quedan " + i + " intentos");

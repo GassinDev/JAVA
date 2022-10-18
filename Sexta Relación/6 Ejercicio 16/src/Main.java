@@ -58,10 +58,10 @@ public class Main {
                 }
             }
             System.out.println("");
-            if(resul1 != resul2 & resul2 != resul3 & resul1 != resul3){
+            if(resul1 != resul2 && resul2 != resul3 && resul1 != resul3){
                 System.out.println("Lo siento, ha perdido");
             }else{
-                if(resul1 == resul2 & resul2 == resul3){
+                if(resul1 == resul2 && resul2 == resul3){
                     System.out.println("Enhorabuena, ha ganado 10 monedas");
                 }else{
                     System.out.println("Bien, ha recuperado su moneda");
