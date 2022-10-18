@@ -4,11 +4,25 @@ public class Main {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
 
-        int n,n2;
+        int n,n2,a,b,mcm;
 
         System.out.println("Dime un número");
         n = reader.nextInt();
+        System.out.println("Dime otro número");
+        n2 = reader.nextInt();
 
+        a = Math.max(n,n2);
+        b = Math.min(n,n2);
+
+        mcm = 0;
+
+        do{
+            mcm = b;
+            b = a % b;
+            a = mcm;
+        }while(b != 0);
+
+        System.out.println("El máximo común divisor de " + n + " y " + n2 + " es " + mcm);
         
     }
 }
