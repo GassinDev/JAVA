@@ -22,19 +22,14 @@ public class Main {
 
         System.out.println();
         System.out.println();
-        //ARRAY MODIFICADO
-        for(int i = 0; i < 15;i++){
 
-            s = array[14];
-            array [0] = s;
+        //ARRAY MODIFICADO
+
+        System.out.print(array[14] + " ");
+
+        for(int i = 0; i < 14;i++){
 
             System.out.print(array[i] + " ");
-
-            if(i != 0){
-                i = 1;
-                array[i] = i;
-                i++;
-            }
         }
     }
 }
