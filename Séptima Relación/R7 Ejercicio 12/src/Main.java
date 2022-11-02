@@ -2,58 +2,76 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner reader = new Scanner(System.in);
+        int[] a = new int[10];
+        int[] b = new int[10];
+        int[] c = new int[10];
 
-        int[] array = new int[10];
-        int n,u,inicial = 0,fina = 0;
+        int start, end;
 
-        for(int i = 0; i < 15;i++){
-            System.out.println("Dime números");
-            n = reader.nextInt();
+        System.out.println("Escribe los valores del array:");
 
-            array[i] = n;
+        for (int i = 0; i < a.length; ++i) {
+            System.out.println("Escribe el valor en la posicion: " + i);
+            int valor = reader.nextInt();
+            a[i] = valor;
         }
 
-
-        for(int i = 0; i < array.length;i++){
-            System.out.print(array[i] + " ");
+        for (int i = 0; i <= b.length - 1; ++i) {
+            System.out.print(" " + i + " ");
         }
 
         System.out.println();
+        System.out.print("[");
+
+        for (int i = 0; i < a.length - 1; ++i) {
+            System.out.print(a[i] + ", ");
+        }
+
+        System.out.print(a[a.length - 1]);
+        System.out.println("]");
+
         System.out.println();
 
-        System.out.println("Dime la posicion inicial");
-        inicial = reader.nextInt();
+        System.out.println("Dime la posición inicial:");
+        start = reader.nextInt();
+        System.out.println("Dime la posición final;");
+        end = reader.nextInt();
 
-        System.out.println("DIme la posicion final");
-        fina = reader.nextInt();
+        if (start < end && start >= 0 && start < 10 && end >= 0 && end < 10) {
+            for (int i = 0; i < 10; i++) {
+                c[i] = a[i];
+            }
 
-        while(inicial > fina && inicial <= 0 & inicial >= 9 & fina <= 0 && fina >= 9 ){
+            c[end] = a[start];
 
-            System.out.println();
-            System.out.println();
+            for (int i = end + 1; i < 10; i++) {
+                c[i] = a[i - 1];
+            }
 
-            System.out.println("Dime la posicion inicial");
-            inicial = reader.nextInt();
+            c[0] = a[9];
 
-            System.out.println("DIme la posicion final");
-            fina = reader.nextInt();
+            for (int i = 0; i < start; i++) {
+                c[i + 1] = a[i];
+            }
+        } else {
+            System.out.println("El número del inicio tiene que ser menor que el del final. Y ambos deben estar entre el 0 y el 9.");
         }
 
-        u = array[14];
 
-        for(int i = array.length - 1; i > 0;i--){
-
-            array[i] = array[i - 1];
-
+        for (int i = 0; i <= b.length - 1; ++i) {
+            System.out.print(" " + i + " ");
         }
 
-        array[0] = u;
+        System.out.println();
+        System.out.print("[");
 
-        //ARRAY SIN MODIFICAR
-        for(int i = 0; i < array.length;i++){
-            System.out.print(array[i] + " ");
+        for (int i = 0; i < a.length - 1; ++i) {
+            System.out.print(c[i] + ", ");
         }
 
+        System.out.print(c[c.length - 1]);
+        System.out.println("]");
     }
 }
