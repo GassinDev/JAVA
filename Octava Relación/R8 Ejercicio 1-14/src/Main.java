@@ -104,8 +104,26 @@ public class Main {
             }break;
 
             case 7:{
-                int n;
-            }
+                int n,p;
+
+                System.out.println("Dime un numero");
+                n = reader.nextInt();
+                System.out.println("Dime la posicion del digito que quieres");
+                p = reader.nextInt();
+
+                System.out.println(digitoN(n,p));
+            }break;
+
+            case 8:{
+                int n,c;
+
+                System.out.println("Dime un numero");
+                n = reader.nextInt();
+                System.out.println("Dime la cifra que quieres buscar y te dire la posicion del primero que encuentre");
+                c = reader.nextInt();
+
+                System.out.println("Posición: " + posicionDeDigito(n,c));
+            }break;
         }
 
     }
@@ -200,10 +218,42 @@ public class Main {
         return inver;
     }
 
-    static  int digitoN(int n){
+    static  int digitoN(int n,int p){
 
-        
+        int []narray = new int[digitos(n)];
+
+        for(int i = narray.length - 1; i > 0; i--){
+
+            narray[i] = n % 10;
+            n = n / 10;
+        }
+
+        return narray[p - 1];
     }
+
+    static int posicionDeDigito(int n,int c){
+
+        int []narray = new int[digitos(n)];
+        int p = 0;
+
+        for(int i = narray.length - 1; i > 0; i--){
+
+            narray[i] = n % 10;
+            n = n / 10;
+        }
+
+        for(int i = 0; i < narray.length;i++){
+
+            if(narray[i] == c){
+
+                p = i;
+                break;
+            }
+        }
+
+        return p;
+    }
+
 }
 
 
