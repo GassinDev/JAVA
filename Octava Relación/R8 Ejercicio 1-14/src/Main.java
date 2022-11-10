@@ -124,6 +124,28 @@ public class Main {
 
                 System.out.println("Posición: " + posicionDeDigito(n,c));
             }break;
+
+            case 9:{
+                int n,cifras;
+
+                System.out.println("Dime un numero");
+                n = reader.nextInt();
+                System.out.println("Dime la cifra que quieres que quite por detrás");
+                cifras = reader.nextInt();
+
+                quitaPorDetras(n,cifras);
+            }break;
+
+            case 10:{
+                int n,cifras;
+
+                System.out.println("Dime un numero");
+                n = reader.nextInt();
+                System.out.println("Dime la cifra que quieres que quite por delante");
+                cifras = reader.nextInt();
+
+                quitaPorDelante(n,cifras);
+            }break;
         }
 
     }
@@ -222,13 +244,13 @@ public class Main {
 
         int []narray = new int[digitos(n)];
 
-        for(int i = narray.length - 1; i > 0; i--){
+        for(int i = narray.length - 1; i >= 0; i--){
 
             narray[i] = n % 10;
             n = n / 10;
         }
 
-        return narray[p - 1];
+        return narray[p];
     }
 
     static int posicionDeDigito(int n,int c){
@@ -236,7 +258,7 @@ public class Main {
         int []narray = new int[digitos(n)];
         int p = 0;
 
-        for(int i = narray.length - 1; i > 0; i--){
+        for(int i = narray.length - 1; i >= 0; i--){
 
             narray[i] = n % 10;
             n = n / 10;
@@ -253,6 +275,37 @@ public class Main {
 
         return p;
     }
+
+    static void quitaPorDetras(int n,int cifras){
+
+        int []narray = new int[digitos(n)];
+
+        for(int i = narray.length - 1; i >= 0; i--){
+
+            narray[i] = n % 10;
+            n = n / 10;
+        }
+
+        for(int i = 0; i < narray.length - cifras;i++){
+            System.out.print(narray[i]);
+        }
+    }
+
+    static void quitaPorDelante(int n,int cifras){
+
+        int []narray = new int[digitos(n)];
+
+        for(int i = narray.length - 1; i >= 0; i--){
+
+            narray[i] = n % 10;
+            n = n / 10;
+        }
+
+        for(int i = cifras; i < narray.length;i++){
+            System.out.print(narray[i]);
+        }
+    }
+
 
 }
 
