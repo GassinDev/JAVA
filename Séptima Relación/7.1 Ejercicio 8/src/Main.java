@@ -14,9 +14,16 @@ public class Main {
 
         for(int fila = 8; fila >= 1; fila--) {
             for(int columna = 1; columna <= 8; columna++) {
-                if ((Math.abs(filaAlfil - fila) == Math.abs(columnaAlfil - columna))
-                        && (! ((filaAlfil == fila) && (columnaAlfil == columna)))) {
-                    System.out.print((char)(columna + 96) + "" + fila + " ");
+                int disty = Math.abs(filaAlfil - fila);
+                int distx = Math.abs(columnaAlfil - columna);
+
+                if ((disty == distx)) {
+                    if((columna == columnaAlfil) && (fila == filaAlfil)){
+                        continue;
+                    }else {
+                        System.out.print((char)(columna + 96) + "" + fila + " ");
+                    }
+
                 }
             }
         }
