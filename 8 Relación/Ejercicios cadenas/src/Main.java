@@ -30,13 +30,20 @@ public class Main {
 
                 String s;
                 System.out.println("Dime la frase");
-                s = reader.next();
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println(s);
                 System.out.println(numeroEspacios(s));
 
             }break;
 
             case 2:{
-
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println(s);
+                System.out.println(numeroVocales(s));
             }break;
         }
 
@@ -53,6 +60,24 @@ public class Main {
             }
         }
         return "En total hay " + cont + " espacios.";
+    }
+
+    public static String numeroVocales(String s){
+
+        int cont = 0;
+
+        String vocales = "AEIOUaeiou";
+
+        for(int i = 0; i < s.length();i++){
+            for (int j = 0; j < vocales.length();j++){
+                if(vocales.contains(s)){
+                    cont++;
+                }
+            }
+        }
+
+        return "En total hay " + cont + " vocales.";
+
     }
 
 }

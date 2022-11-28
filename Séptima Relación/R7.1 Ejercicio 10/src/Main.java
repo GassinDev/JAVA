@@ -71,7 +71,7 @@ public class Main {
             }else {
                 while(!array[ji][jj].equals("*")){
                     System.out.println("Esa posicion esta ya ocupada");
-                    System.out.println("Dime la posicion que quieres colocar jugador 1 (Primero vertical y despues horizontal");
+                    System.out.println("Dime la posicion que quieres colocar jugador 2 (Primero vertical y despues horizontal");
                     ji = reader.nextInt();
                     jj = reader.nextInt();
 
