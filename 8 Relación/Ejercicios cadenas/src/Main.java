@@ -65,6 +65,27 @@ public class Main {
                 Contiene(caracter,s);
             }
             break;
+
+            case 5: {
+                int n;
+                String caracter;
+                System.out.println("Dime un caracter");
+                reader.nextLine();
+                caracter = reader.nextLine();
+                System.out.println("¿Cuantas veces lo repito?");
+                n = reader.nextInt();
+                RepiteCaracter(n,caracter);
+            }
+            break;
+
+            case 6: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                quitaEspacios(s);
+            }
+            break;
         }
 
 
@@ -125,5 +146,26 @@ public class Main {
         }
     }
 
-    public static
+    public static void RepiteCaracter(int n, String caracter){
+
+        for(int i = 0; i < n;i++){
+            System.out.print(caracter);
+        }
+    }
+
+    public static void quitaEspacios(String s){
+
+        String sinespaS;
+
+        for(int i = 0; i < s.length();i++){
+
+            if(s.charAt(i) == ' '){
+
+            }else{
+                System.out.print(s.charAt(i));
+            }
+        }
+    }
+
+    public static void
 }
