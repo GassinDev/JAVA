@@ -24,53 +24,73 @@ public class Main {
         System.out.println("Dime que ejercicio quieres");
         opcion = reader.nextInt();
 
-        switch (opcion)
-        {
+        switch (opcion) {
             case 1: {
 
                 String s;
                 System.out.println("Dime la frase");
                 reader.nextLine();
                 s = reader.nextLine();
-                System.out.println(s);
                 System.out.println(numeroEspacios(s));
 
-            }break;
+            }
+            break;
 
-            case 2:{
+            case 2: {
                 String s;
                 System.out.println("Dime una palabra u oración");
                 reader.nextLine();
                 s = reader.nextLine();
-                System.out.println(s);
                 System.out.println(numeroVocales(s));
-            }break;
+            }
+            break;
+
+            case 3: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println(EsPalindromo(s));
+            }
+            break;
+
+            case 4: {
+                String s;
+                String caracter;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println("Dime un caracter");
+                caracter = reader.nextLine();
+                Contiene(caracter,s);
+            }
+            break;
         }
 
 
     }
 
-    public static String numeroEspacios(String s){
+    public static String numeroEspacios(String s) {
 
         int cont = 0;
 
-        for(int i = 0; i < s.length();i++){
-            if(s.charAt(i) == ' '){
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
                 cont++;
             }
         }
         return "En total hay " + cont + " espacios.";
     }
 
-    public static String numeroVocales(String s){
+    public static String numeroVocales(String s) {
 
         int cont = 0;
 
-        String vocales = "AEIOUaeiou";
+        String vocales = "AEIOUaeiouáéíóúÁÉÍÓÚ";
 
-        for(int i = 0; i < s.length();i++){
-            for (int j = 0; j < vocales.length();j++){
-                if(vocales.contains(s)){
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = 0; j < vocales.length(); j++) {
+                if (s.charAt(i) == vocales.charAt(j)) {
                     cont++;
                 }
             }
@@ -80,4 +100,30 @@ public class Main {
 
     }
 
+    public static Boolean EsPalindromo(String s) {
+
+        s = s.toLowerCase().replace("á", "a").replace("é", "e").replace("í", "i").replace("ó", "o")
+                .replace("ú", "u").replace(" ", "").replace(".", "").replace(",", "");
+
+        String inverS = new StringBuilder(s).reverse().toString();
+
+        if(s.equals(inverS)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public static void Contiene(String s, String caracter){
+
+        for(int i = 0; i < s.length();i++){
+            if(caracter.contains(s)){
+                System.out.println("Si aparece el caracter");
+            }else {
+                System.out.println("No aparece el caracter");
+            }
+        }
+    }
+
+    public static
 }
