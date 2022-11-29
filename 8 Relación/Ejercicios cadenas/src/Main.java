@@ -86,6 +86,16 @@ public class Main {
                 quitaEspacios(s);
             }
             break;
+
+            case 7: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                quitaEspaciosTrim(s);
+            }
+            break;
+
         }
 
 
