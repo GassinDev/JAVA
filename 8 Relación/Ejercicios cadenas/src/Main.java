@@ -5,20 +5,20 @@ public class Main {
         Scanner reader = new Scanner(System.in);
 
         int opcion;
-        System.out.println("┌──────────────────────┐");
-        System.out.println("│ Menú Cadenas         │");
-        System.out.println("├──────────────────────┤");
-        System.out.println("│ 1- NumeroEspacios    │");
-        System.out.println("│ 2- NumeroVocales     │");
-        System.out.println("│ 3- EsPalindromo      │");
-        System.out.println("│ 4- Contiene          │");
-        System.out.println("│ 5- RepiteCaracter    │");
-        System.out.println("│ 6- QuitaEspacios     │");
-        System.out.println("│ 7- QuitaEspaciosTrim │");
-        System.out.println("│ 8- SustituyeCaracter │");
-        System.out.println("│ 9- CuentaPalabras    │");
-        System.out.println("│ 10- EsNumero         │");
-        System.out.println("└──────────────────────┘");
+        System.out.println("┌───────────────────────────────────────────────────┐└┘─┬┴┤┤├ ");
+        System.out.println("│ Menú Cadenas                                      │");
+        System.out.println("├──────────────────────┬────────────────────────────┤");
+        System.out.println("│ 1- NumeroEspacios    │ 11- EsNumero  x             │");
+        System.out.println("│ 2- NumeroVocales     │ 12- QuitaCaracter          │");
+        System.out.println("│ 3- EsPalindromo      │ 13- QuitaAcentos           │");
+        System.out.println("│ 4- Contiene          │ 14- InvierteCadena         │");
+        System.out.println("│ 5- RepiteCaracter    │ 15- VecesCaracter          │");
+        System.out.println("│ 6- Padleft        x   │ 16- VecesPalabra           │");
+        System.out.println("│ 7- QuitaEspacios   x  │ 17- MayusculasPrimera      │");
+        System.out.println("│ 8- QuitaEspaciosTrim x│ 18- SustituyePalabra       │");
+        System.out.println("│ 9- SustituyeCaracter │ 19- InviertePalabras       │");
+        System.out.println("│ 10- CuentaPalabras   │ 20- QuitaEspaciosSobrantes │");
+        System.out.println("└──────────────────────┴────────────────────────────┘");
 
         System.out.println();
         System.out.println("Dime que ejercicio quieres");
@@ -78,7 +78,7 @@ public class Main {
             }
             break;
 
-            case 6: {
+            case 7: {
                 String s;
                 System.out.println("Dime una palabra u oración");
                 reader.nextLine();
@@ -87,7 +87,7 @@ public class Main {
             }
             break;
 
-            case 7: {
+            case 8: {
                 String s;
                 System.out.println("Dime una palabra u oración");
                 reader.nextLine();
@@ -96,6 +96,59 @@ public class Main {
             }
             break;
 
+            case 9: {
+                String s;
+                String caracterCambiar;
+                String caracterPuesto;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println("Dime un caracter que quieras cambiar");
+                caracterCambiar = reader.nextLine();
+                System.out.println("¿Por cual lo cambio?");
+                caracterPuesto = reader.nextLine();
+                System.out.println(sustituyeCaracter(s,caracterCambiar,caracterPuesto));
+            }
+            break;
+
+            case 10: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println("Hay un total de " + cuentaPalabras(s) + " palabras");
+            }
+            break;
+
+            case 11: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                esNumero(s);
+            }
+            break;
+
+            case 12: {
+                String s;
+                String caracter;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println("Dime un caracter que quieras quitar");
+                caracter = reader.nextLine();
+                System.out.println(quitaCaracter(s,caracter));
+            }
+            break;
+
+            case 13: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                quitaAcentos(s);
+            }
+            break;
         }
 
 
@@ -177,5 +230,113 @@ public class Main {
         }
     }
 
-    public static void
+    public static void quitaEspaciosTrim(String s){
+
+
+        for(int i = 0; i < s.length();i++){
+
+            if(s.charAt(i) != s.length()){
+                if(s.charAt(i) == ' ' && s.charAt(i + 1) == ' ' | s.charAt(i + 1) == ' ' && s.charAt(i + 2) != ' ' ){
+
+                }else{
+                    System.out.print(s.charAt(i));
+                }
+            }else{
+                break;
+            }
+
+        }
+    }
+    public static String sustituyeCaracter(String s,String caracterCambiar,String caracterPuesto){
+
+
+        for(int i = 0; i < s.length();i++) {
+
+            if (s.charAt(i) == caracterCambiar.charAt(0)) {
+
+                s = s.replace(caracterCambiar.charAt(0), caracterPuesto.charAt(0));
+
+            }
+        }
+
+        return s;
+    }
+
+    public static int cuentaPalabras(String s){
+
+        int cont = 0;
+
+        for(int i = 0; i < s.length();i++) {
+
+            if(i == s.length() - 1){
+                cont++;
+                break;
+            }else{
+                if (s.charAt(i) != ' ' && s.charAt(i + 1) == ' ') {
+
+                    cont++;
+                }
+            }
+        }
+
+        return cont;
+    }
+
+    public static void esNumero(String s){
+
+
+        String numeros = "0123456789 ";
+        int cont = 0;
+
+        for(int i = 0; i < s.length();i++) {
+
+            for(int j = 0; j < numeros.length();j++){
+                if(s.charAt(i) == numeros.charAt(j)){
+
+                }else{
+                    cont++;
+                }
+            }
+        }
+        if(cont != 0){
+            System.out.println("No esta compuesto solo por números " + cont);
+
+        }else {
+            System.out.println("Si esta compuesto por solo números " + cont);
+        }
+
+    }
+
+    public static String quitaCaracter(String s,String caracter){
+
+        String nada = "";
+
+        for(int i = 0; i < s.length();i++) {
+
+            if (s.charAt(i) == caracter.charAt(0)) {
+
+                s = s.replace(String.valueOf(caracter),"");
+
+            }
+        }
+
+        return s;
+    }
+
+    public static String quitaAcentos(String s){
+
+        String acentos = "áéíóúÁÉÍÓÚ";
+        String sinAce  = "aeiouAEIOU";
+        for(int i = 0; i < s.length();i++) {
+
+            for(int j = 0; j < )
+            if (s.charAt(i) == caracter.charAt(0)) {
+
+                s = s.replace(String.valueOf(caracter),"");
+
+            }
+        }
+
+        return s;
+    }
 }
