@@ -8,14 +8,14 @@ public class Main {
         System.out.println("┌───────────────────────────────────────────────────┐└┘─┬┴┤┤├ ");
         System.out.println("│ Menú Cadenas                                      │");
         System.out.println("├──────────────────────┬────────────────────────────┤");
-        System.out.println("│ 1- NumeroEspacios    │ 11- EsNumero  x             │");
+        System.out.println("│ 1- NumeroEspacios    │ 11- EsNumero               │");
         System.out.println("│ 2- NumeroVocales     │ 12- QuitaCaracter          │");
         System.out.println("│ 3- EsPalindromo      │ 13- QuitaAcentos           │");
         System.out.println("│ 4- Contiene          │ 14- InvierteCadena         │");
         System.out.println("│ 5- RepiteCaracter    │ 15- VecesCaracter          │");
         System.out.println("│ 6- Padleft        x   │ 16- VecesPalabra           │");
-        System.out.println("│ 7- QuitaEspacios   x  │ 17- MayusculasPrimera      │");
-        System.out.println("│ 8- QuitaEspaciosTrim x│ 18- SustituyePalabra       │");
+        System.out.println("│ 7- QuitaEspacios     │ 17- MayusculasPrimera      │");
+        System.out.println("│ 8- QuitaEspaciosTrim │ 18- SustituyePalabra       │");
         System.out.println("│ 9- SustituyeCaracter │ 19- InviertePalabras       │");
         System.out.println("│ 10- CuentaPalabras   │ 20- QuitaEspaciosSobrantes │");
         System.out.println("└──────────────────────┴────────────────────────────┘");
@@ -31,7 +31,7 @@ public class Main {
                 System.out.println("Dime la frase");
                 reader.nextLine();
                 s = reader.nextLine();
-                System.out.println(numeroEspacios(s));
+                System.out.println("Hay un total de " + numeroEspacios(s) + " espacios.");
 
             }
             break;
@@ -83,7 +83,7 @@ public class Main {
                 System.out.println("Dime una palabra u oración");
                 reader.nextLine();
                 s = reader.nextLine();
-                quitaEspacios(s);
+                System.out.println(quitaEspacios(s));
             }
             break;
 
@@ -92,7 +92,8 @@ public class Main {
                 System.out.println("Dime una palabra u oración");
                 reader.nextLine();
                 s = reader.nextLine();
-                quitaEspaciosTrim(s);
+                System.out.println("*" + s + "*");
+                System.out.println("*" + quitaEspaciosTrim(s) + "*");
             }
             break;
 
@@ -146,7 +147,28 @@ public class Main {
                 System.out.println("Dime una palabra u oración");
                 reader.nextLine();
                 s = reader.nextLine();
-                quitaAcentos(s);
+                System.out.println(quitaAcentos(s));
+            }
+            break;
+
+            case 14: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println(invierteCadena(s));
+            }
+            break;
+
+            case 15: {
+                String s;
+                String caracter;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println("Dime un caracter que quieras que cuente");
+                caracter = reader.nextLine();
+                System.out.println("Hay un total de " + vecesCaracter(s,caracter) + " veces ese caracter");
             }
             break;
         }
@@ -154,7 +176,7 @@ public class Main {
 
     }
 
-    public static String numeroEspacios(String s) {
+    public static int numeroEspacios(String s) {
 
         int cont = 0;
 
@@ -163,7 +185,7 @@ public class Main {
                 cont++;
             }
         }
-        return "En total hay " + cont + " espacios.";
+        return cont;
     }
 
     public static String numeroVocales(String s) {
@@ -209,42 +231,56 @@ public class Main {
         }
     }
 
-    public static void RepiteCaracter(int n, String caracter){
+    public static String RepiteCaracter(int n, String caracter){
 
+        String caraRepe = "";
         for(int i = 0; i < n;i++){
-            System.out.print(caracter);
+            caraRepe = caraRepe + caracter;
         }
+
+        return  caraRepe;
     }
 
-    public static void quitaEspacios(String s){
+    public static String quitaEspacios(String s){
 
-        String sinespaS;
+        String sinespaS = "";
 
         for(int i = 0; i < s.length();i++){
 
             if(s.charAt(i) == ' '){
 
             }else{
-                System.out.print(s.charAt(i));
+                sinespaS = sinespaS + s.charAt(i);
             }
         }
+
+        return sinespaS;
     }
 
-    public static void quitaEspaciosTrim(String s){
+    public static String quitaEspaciosTrim(String s){
 
+        int i;
+        String nada = "";
+        String sinEspa = "";
+        if(numeroEspacios(s) != s.length()){
+            int p1, p2;
 
-        for(int i = 0; i < s.length();i++){
-
-            if(s.charAt(i) != s.length()){
-                if(s.charAt(i) == ' ' && s.charAt(i + 1) == ' ' | s.charAt(i + 1) == ' ' && s.charAt(i + 2) != ' ' ){
-
-                }else{
-                    System.out.print(s.charAt(i));
-                }
-            }else{
-                break;
+            p1 = 0;
+            while (s.charAt(p1) == ' '){
+                p1 ++;
             }
 
+            p2 = s.length() - 1;
+            while (s.charAt(p2) == ' '){
+                p2--;
+            }
+            for (i = p1; i < p2 + 1; i++){
+                sinEspa = sinEspa + s.charAt(i);
+            }
+            return sinEspa;
+        }
+        else{
+            return nada;
         }
     }
     public static String sustituyeCaracter(String s,String caracterCambiar,String caracterPuesto){
@@ -282,28 +318,14 @@ public class Main {
         return cont;
     }
 
-    public static void esNumero(String s){
+    public static boolean esNumero(String s){
 
-
-        String numeros = "0123456789 ";
-        int cont = 0;
-
-        for(int i = 0; i < s.length();i++) {
-
-            for(int j = 0; j < numeros.length();j++){
-                if(s.charAt(i) == numeros.charAt(j)){
-
-                }else{
-                    cont++;
-                }
+        for (int cont = 0; cont < s.length(); cont++) {
+            if (!Character.isDigit(s.charAt(cont))) {
+                return false;
             }
         }
-        if(cont != 0){
-            System.out.println("No esta compuesto solo por números " + cont);
-
-        }else {
-            System.out.println("Si esta compuesto por solo números " + cont);
-        }
+        return true;
 
     }
 
@@ -327,16 +349,48 @@ public class Main {
 
         String acentos = "áéíóúÁÉÍÓÚ";
         String sinAce  = "aeiouAEIOU";
+        int pos;
+
         for(int i = 0; i < s.length();i++) {
 
-            for(int j = 0; j < )
-            if (s.charAt(i) == caracter.charAt(0)) {
+            for(int j = 0; j < acentos.length();j++){
 
-                s = s.replace(String.valueOf(caracter),"");
+                if(s.charAt(i) == acentos.charAt(j)){
 
+                    pos = j;
+
+                    for (int x = 0; x < sinAce.length();x++){
+                        if(x == pos){
+                            s = s.replace(String.valueOf(s.charAt(i)),String.valueOf(sinAce.charAt(x)));
+                        }
+                    }
+                }
             }
         }
 
         return s;
+    }
+
+    public static String invierteCadena(String s){
+
+        String cadenaInver = "";
+        for(int i = s.length() - 1; i >= 0;i--) {
+            cadenaInver = cadenaInver + s.charAt(i);
+        }
+
+        return cadenaInver;
+    }
+
+    public static int vecesCaracter(String s,String caracter){
+
+        int cont = 0;
+
+        for(int i = 0; i < s.length();i++){
+            if(s.charAt(i) == caracter.charAt(0)){
+                cont++;
+            }
+        }
+
+        return cont;
     }
 }
