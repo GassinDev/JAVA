@@ -171,6 +171,27 @@ public class Main {
                 System.out.println("Hay un total de " + vecesCaracter(s,caracter) + " veces ese caracter");
             }
             break;
+
+            case 16: {
+                String s;
+                String palabra;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println("Dime una palabra que quieras que cuente");
+                palabra = reader.nextLine();
+                System.out.println("Se repite un total de " + vecesPalabra(s,palabra) + " veces");
+            }
+            break;
+
+            case 17: {
+                String s;
+                System.out.println("Dime una palabra u oración");
+                reader.nextLine();
+                s = reader.nextLine();
+                System.out.println(mayusculasPrimera(s));
+            }
+            break;
         }
 
 
@@ -393,4 +414,53 @@ public class Main {
 
         return cont;
     }
+
+    public static int vecesPalabra(String s,String palabra){
+
+        int cont = 0;
+        String[] palabras = s.split("\\ ");
+
+        for(int i = 0; i < palabras.length;i++){
+
+            if(palabras[i].equals(palabra)){
+                cont++;
+            }
+        }
+
+        return cont;
+    }
+
+    public static String mayusculasPrimera(String s){
+
+        String mayúscula = "QWERTYUIOPASDFGHJKLÑZXCVBNMÁÉÍÓÚ";
+        String minusculas  = "qwertyuiopñlkjhgfdsazxcvbnmáéíóú";
+        int pos;
+
+        for(int i = 0; i < s.length();i++) {
+
+            for(int j = 0; j < minusculas.length();j++){
+
+
+
+                if(s.charAt(i) != ' ' && s.charAt(i - 1) == ' '){
+                    if(s.charAt(i) == minusculas.charAt(j)){
+
+                        pos = j;
+
+                        for (int x = 0; x < mayúscula.length();x++){
+                            if(x == pos){
+                                s = s.replace(String.valueOf(s.charAt(i)),String.valueOf(mayúscula.charAt(x)));
+                                break;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+        return s;
+    }
+
+
 }
