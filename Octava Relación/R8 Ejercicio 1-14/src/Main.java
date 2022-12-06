@@ -4,12 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        System.out.println();
         System.out.println("Menú de ejercicios");
         System.out.println("───────────────────────────────────────");
         System.out.println("1. esCapicua        8. posicionDeDigito");
         System.out.println("2. esPrimo          9. quitaPorDetras");
         System.out.println("3. siguientePrimo   10. quitaPorDelante");
-        System.out.println("4. potencia         11. quitaPorDelante");
+        System.out.println("4. potencia         11. pegaPorDetras");
         System.out.println("5. digitos          12. pegaPorDelante");
         System.out.println("6. voltea           13. trozoDeNumero");
         System.out.println("7. digitoN          14. juntaNumeros");
@@ -35,7 +36,7 @@ public class Main {
             System.out.println("1. esCapicua        8. posicionDeDigito");
             System.out.println("2. esPrimo          9. quitaPorDetras");
             System.out.println("3. siguientePrimo   10. quitaPorDelante");
-            System.out.println("4. potencia         11. quitaPorDelante");
+            System.out.println("4. potencia         11. pegaPorDetras");
             System.out.println("5. digitos          12. pegaPorDelante");
             System.out.println("6. voltea           13. trozoDeNumero");
             System.out.println("7. digitoN          14. juntaNumeros");
@@ -51,7 +52,6 @@ public class Main {
 
                 System.out.println("Dime el número que quieras que te diga si es Capicua");
                 n = reader.nextInt();
-
                 System.out.println(esCapicua(n));
             }break;
 
@@ -60,7 +60,6 @@ public class Main {
 
                 System.out.println("Dime el número que quieras que te diga si es Primo");
                 n = reader.nextInt();
-
                 System.out.println(esPrimo(n));
             }break;
 
@@ -69,7 +68,6 @@ public class Main {
 
                 System.out.println("Dime el número que quieras que te diga el siguiente primo de ese");
                 n = reader.nextInt();
-
                 System.out.println(siguientePrimo(n));
 
             }break;
@@ -81,7 +79,6 @@ public class Main {
                 base = reader.nextInt();
                 System.out.println("Dime el exponente");
                 expo = reader.nextInt();
-
                 System.out.println(potencia(base,expo));
             }break;
 
@@ -90,7 +87,6 @@ public class Main {
 
                 System.out.println("Dime el número que quieres que te cuente sus dígitos");
                 n = reader.nextInt();
-
                 System.out.println(digitos(n));
             }break;
 
@@ -99,7 +95,6 @@ public class Main {
 
                 System.out.println("Dime el número que quieres que te invierta");
                 n = reader.nextInt();
-
                 System.out.println(voltea(n));
             }break;
 
@@ -110,7 +105,6 @@ public class Main {
                 n = reader.nextInt();
                 System.out.println("Dime la posicion del digito que quieres");
                 p = reader.nextInt();
-
                 System.out.println(digitoN(n,p));
             }break;
 
@@ -121,7 +115,6 @@ public class Main {
                 n = reader.nextInt();
                 System.out.println("Dime la cifra que quieres buscar y te dire la posicion del primero que encuentre");
                 c = reader.nextInt();
-
                 System.out.println("Posición: " + posicionDeDigito(n,c));
             }break;
 
@@ -132,7 +125,6 @@ public class Main {
                 n = reader.nextInt();
                 System.out.println("Dime la cifra que quieres que quite por detrás");
                 cifras = reader.nextInt();
-
                 quitaPorDetras(n,cifras);
             }break;
 
@@ -141,11 +133,42 @@ public class Main {
 
                 System.out.println("Dime un numero");
                 n = reader.nextInt();
-                System.out.println("Dime la cifra que quieres que quite por delante");
+                System.out.println("Dime cuantas cifras quieres que quite por delante");
                 cifras = reader.nextInt();
-
                 quitaPorDelante(n,cifras);
             }break;
+
+            case 11:{
+                int n,digi;
+
+                System.out.println("Dime un número");
+                n = reader.nextInt();
+                System.out.println("Dime el digito que quieres pegarle por detrás");
+                digi = reader.nextInt();
+                System.out.println(pegaPorDetras(n,digi));
+            }break;
+
+            case 12:{
+                int n,digi;
+
+                System.out.println("Dime un número");
+                n = reader.nextInt();
+                System.out.println("Dime el digito que quieres pegarle por delante");
+                digi = reader.nextInt();
+                System.out.println(pegaPorDelante(n,digi));
+            }break;
+
+            case 13:{
+                int n,p1,p2;
+
+                System.out.println("Dime un número");
+                n = reader.nextInt();
+                System.out.println("Dime la primera posicion");
+                p1 = reader.nextInt();
+                System.out.println("Dime la segunda posicion");
+                p2 = reader.nextInt();
+                trozoDeNumero(n,p1,p2);
+            }
         }
 
     }
@@ -270,6 +293,8 @@ public class Main {
 
                 p = i;
                 break;
+            } else if (i == narray.length - 1) {
+                p = - 1;
             }
         }
 
@@ -307,6 +332,47 @@ public class Main {
     }
 
 
+    static int  pegaPorDetras(int n, int digi){
+
+        n = n * 10;
+        n = n + digi;
+
+        return n;
+    }
+
+    static int pegaPorDelante(int n, int digi){
+
+        int mcoma = 10;
+        double nd;
+
+        for(int i = 1 ;i < digitos(n);i++){
+            mcoma = mcoma * 10;
+        }
+
+        nd = (double) n / mcoma;
+        nd = nd + digi;
+        nd = nd * mcoma;
+        return (int)nd;
+    }
+
+    static void trozoDeNumero(int n, int p1,int p2){
+
+        int []narray = new int[digitos(n)];
+
+
+        for(int i = narray.length - 1; i >= 0; i--){
+            narray[i] = n % 10;
+            n = n / 10;
+        }
+
+        for(int i = p1 - 1; i <= p2 - 1;i++){
+            System.out.print(narray[i]);
+        }
+    }
+
+    static int juntaNumeros(int n1,int n2){
+
+    }
 }
 
 
