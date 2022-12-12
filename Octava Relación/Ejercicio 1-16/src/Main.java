@@ -15,6 +15,8 @@ public class Main {
         System.out.println("6. voltea           13. trozoDeNumero");
         System.out.println("7. digitoN          14. juntaNumeros");
         System.out.println();
+        System.out.println("15. EsPrimo 1-1000          16. EsCapicua 1-99999");
+        System.out.println();
 
         Scanner reader = new Scanner(System.in);
 
@@ -23,7 +25,7 @@ public class Main {
         System.out.print("Elije el ejercicio que quieres: ");
         o = reader.nextInt();
 
-        while (o <= 0 | o > 14) {
+        while (o <= 0 | o > 16) {
 
             System.out.println();
             System.out.println("Ese ejercicio no se encuentra en el menú");
@@ -40,6 +42,8 @@ public class Main {
             System.out.println("5. digitos          12. pegaPorDelante");
             System.out.println("6. voltea           13. trozoDeNumero");
             System.out.println("7. digitoN          14. juntaNumeros");
+            System.out.println();
+            System.out.println("15. EsPrimo 1-1000          16. EsCapicua 1-99999");
             System.out.println();
         }
 
@@ -168,9 +172,37 @@ public class Main {
                 System.out.println("Dime la segunda posicion");
                 p2 = reader.nextInt();
                 trozoDeNumero(n,p1,p2);
-            }
-        }
+            }break;
 
+            case 14:{
+                int n,n2;
+
+                System.out.println("Dime el primer número");
+                n = reader.nextInt();
+                System.out.println("Dime el primer número");
+                n2 = reader.nextInt();
+                System.out.println(juntaNumeros(n,n2));
+            }break;
+
+            case 15:{
+                for(int i = 1; i <= 1000;i++){
+
+                    if(esPrimo(i)){
+                        System.out.print(i + " ");
+                    }
+                }
+            }break;
+
+            case 16:{
+                for(int i = 1; i <= 99999;i++){
+
+                    if(esCapicua(i)){
+                        System.out.print(i + " ");
+                    }
+                }
+            }break;
+
+        }
     }
 
     static  boolean esCapicua(int n){
@@ -370,8 +402,16 @@ public class Main {
         }
     }
 
-    static int juntaNumeros(int n1,int n2){
+    static int juntaNumeros(int n,int n2){
 
+        double modin2,resultado;
+
+        modin2 = n2 / Math.pow(10,digitos(n2));
+        resultado = n + modin2;
+        resultado = resultado * Math.pow(10,digitos(n2));
+
+
+        return (int)resultado;
     }
 }
 
