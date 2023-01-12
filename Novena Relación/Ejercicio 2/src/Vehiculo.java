@@ -1,40 +1,46 @@
 public class Vehiculo {
 
-    //CARACTERISTICAS
-    private static int contVehiculos;
-    private static int kmTotales;
+    //ATRIBUTOS
+    private static int vehiculosCreados;
+    private static int kilometrosRecorridos;
     private int km;
 
+    //CONSTRUCTOR
     public Vehiculo() {
+
         this.km = 0;
     }
 
     //METODOS
     public static int getKmTotales() {
-        return kmTotales;
+
+        return kilometrosRecorridos;
     }
 
     public int getVehiculo() {
-        return contVehiculos;
+
+        return vehiculosCreados;
     }
 
     public int getKM() {
+
         return this.km;
     }
 
     public void recorre(int km) {
+
         if (km < 0) {
             km = km * -1;
         }
 
         this.km += km;
-        kmTotales += km;
-
+        kilometrosRecorridos += km;
 
         System.out.println("Km correctos");
     }
 
     public void verKilometraje() {
+
         System.out.println("El vehículo ha recorrido " + getKM() + "km.");
     }
 
