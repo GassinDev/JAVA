@@ -1,8 +1,8 @@
-public class Ave extends Animal{
+public abstract class Ave extends Animal{
 
     //CONSTRUCTOR
-    public Ave(String r, String e, String s) {
-        super(r, e, s);
+    public Ave(Sexo s, String e) {
+        super(s,e);
     }
 
     //METODOS

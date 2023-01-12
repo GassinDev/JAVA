@@ -1,26 +1,24 @@
 public class Animal {
 
+    public enum Sexo{
+        Macho,Hembra
+    }
     //ATRIBUTOS
-    private String raza;
+    private Sexo sexo;
     private String edad;
-    private String sexo;
 
     //CONSTRUCTOR
-    public Animal(String r, String e, String s) {
-        this.raza = r;
+    public Animal(Sexo sexo, String e) {
         this.edad = e;
-        this.sexo = s;
+        this.sexo = Sexo.Macho;
     }
 
     //METODOS
-    public String getRaza(){
-        return raza;
-    }
     public String getEdad() {
         return edad;
     }
-    public String getSexo() {
-        return sexo;
+    public Sexo getSexo() {
+        return this.sexo;
     }
     public void cazar(){
         System.out.println("Zaaasss Fiugh");
