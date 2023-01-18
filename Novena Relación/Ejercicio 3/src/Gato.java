@@ -20,7 +20,7 @@ public class Gato extends Mamifero{
 
     public void cazar(String presa){
         if(presa.equals("ratón") | presa.equals("raton")){
-            System.out.println("Corre para cazrlo");
+            System.out.println("Corre para cazarlo");
         }else{
             System.out.println("Se queda parado no vé ninguna presa que le interese");
         }
