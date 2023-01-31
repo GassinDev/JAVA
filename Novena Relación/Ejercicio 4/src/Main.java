@@ -3,8 +3,8 @@ public class Main {
 
         Fraccion i = new Fraccion(3,4);
         Fraccion a = new Fraccion(2,10);
-        Fraccion b = new Fraccion(3,5);
-        Fraccion c = new Fraccion(2,3);
+        Fraccion b = new Fraccion(-3,5);
+        Fraccion c = new Fraccion(-2,3);
 
         i.invierte();
         System.out.println("Invertida: " + i);
