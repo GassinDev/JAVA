@@ -1,7 +1,7 @@
 public class Articulo {
 
     //ATRIBUTOS
-    String codigo;
+    String codigo = "Vacio";
     String descripcion;
     double preciocompra,precioventa;
     int stock;
@@ -16,8 +16,9 @@ public class Articulo {
         this.stock = stock;
     }
 
-    //METODOS
+    public Articulo() {}
 
+    //METODOS
     public String getCodigo() {
         return codigo;
     }
@@ -58,5 +59,13 @@ public class Articulo {
         this.stock = stock;
     }
 
-
+    @Override
+    public String toString() {
+        return "Artículo" + "\n" + "-----------" + "\n"
+                + "Codigo:" + codigo + "\n"
+                + "Descripcion:" + descripcion + "\n"
+                + "Precio Venta:" + precioventa + "\n"
+                + "Precio Compra:" + preciocompra + "\n"
+                + "Stock:" + stock + "\n";
+    }
 }

@@ -110,7 +110,7 @@ public class Main {
                         }
                     }
 
-                    if(cont2 < 100){
+                    if(cont2 < 8){
 
                         System.out.println("Creando nuevo disco");
                         System.out.print("Titulo:");
@@ -130,15 +130,15 @@ public class Main {
                         System.out.print("Duración:");
                         duracion = reader.nextInt();
 
-                        for(Disco d : colecciondisco) {
-                            if (!d.getCodigo().equals("LIBRE")) {
-                                cont++;
+                        for(int i = 0; i < n;i++){
+                            if(colecciondisco[i].getCodigo().equals("LIBRE")){
+                                colecciondisco[i] = new Disco(codigo,titulo,autor,genero,duracion);
+                                System.out.println("Disco añadido con éxito");
+                                break;
                             }
                         }
-                        colecciondisco[cont] = new Disco(codigo,autor,titulo,genero,duracion);
-                        System.out.println("!Nuevo disco añadido¡");
                     }else{
-                        System.out.print("Lo siento pero esta llena la colección");
+                        System.out.print("Lo siento pero esta llena la colección\n");
                     }
 
                 }break;
@@ -158,12 +158,9 @@ public class Main {
                             autor = reader.next();
                             System.out.print("Nuevo Género:");
                             genero = reader.next();
-                            System.out.print("Nuevo Código:");
-                            codigo = reader.next();
                             System.out.print("Nuevo Duración:");
                             duracion = reader.nextInt();
 
-                            d.setCodigo(codigo);
                             d.setAutor(autor);
                             d.setDuracion(duracion);
                             d.setGenero(genero);
