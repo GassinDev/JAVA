@@ -4,14 +4,14 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner reader = new Scanner(System.in);
-        int o = 0,n = 100,cont = 0,cont2 = 0,d1 = 0,d2 = 0;
+        int o = 0,cont2 = 0,d1 = 0,d2 = 0;
 
         String codigo,autor,titulo,genero;
         int duracion;
 
-        ArrayList<Disco> colecciondisco = new ArrayList<>(n);
+        ArrayList<Disco> colecciondisco = new ArrayList<>();
 
-        for(int i = 0; i < n;i++){
+        for(Disco d:colecciondisco){
             colecciondisco.add(new Disco());
         }
 
