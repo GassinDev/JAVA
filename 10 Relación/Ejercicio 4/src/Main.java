@@ -13,13 +13,12 @@ public class Main {
         for(int i = 0; i < 10;i++){
 
             System.out.print("Dime palabras: ");
-            reader.nextLine();
             pala = reader.nextLine();
 
             listaPalabras.add(pala);
         }
 
-        Collections.sort(pala);
+        Collections.sort(listaPalabras);
 
         for(String p: listaPalabras){
             System.out.println(p);

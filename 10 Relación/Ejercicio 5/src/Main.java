@@ -1,4 +1,4 @@
-import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -9,19 +9,20 @@ public class Main {
         String codigo,autor,titulo,genero;
         int duracion;
 
-        Disco colecciondisco[]= new Disco[n];
+        ArrayList<Disco> colecciondisco = new ArrayList<>(n);
 
         for(int i = 0; i < n;i++){
-            colecciondisco[i] = new Disco();
+            colecciondisco.add(new Disco());
         }
 
-        colecciondisco[0] = new Disco("1253","Jesús Monje","Vida loca","Rock",4);
-        colecciondisco[1] = new Disco("5378","Miguel Molina","La mar","Pop",3);
-        colecciondisco[2] = new Disco("3242","Miguel Molina","Manuela","Pop",6);
-        colecciondisco[3] = new Disco("5235","Joselito","Leire","Pop",2);
-        colecciondisco[4] = new Disco("4532","Miguel Molina","Lomes","Reggaeton",10);
-        colecciondisco[5] = new Disco("9643","Perez","Dura carrera","Pop",8);
-        colecciondisco[6] = new Disco("9384","Papito","Poco a poco","Reggaeton",2);
+
+        colecciondisco.add(new Disco("1253","Jesús Monje","Vida loca","Rock",4));
+        colecciondisco.add(new Disco("5378","Miguel Molina","La mar","Pop",3));
+        colecciondisco.add(new Disco("3242","Miguel Molina","Manuela","Pop",6));
+        colecciondisco.add(new Disco("5235","Joselito","Leire","Pop",2));
+        colecciondisco.add(new Disco("4532","Miguel Molina","Lomes","Reggaeton",10));
+        colecciondisco.add(new Disco("9643","Perez","Dura carrera","Pop",8));
+        colecciondisco.add(new Disco("9384","Papito","Poco a poco","Reggaeton",2));
 
         while (o == 0){
             System.out.println("\uD83D\uDCBFMENÚ COLECCIÓN-DISCOS\uD83D\uDCBF");
@@ -51,8 +52,8 @@ public class Main {
 
                     switch (op){
                         case 1:{
-                            for(Disco d : colecciondisco) {
-                                if (!d.getCodigo().equals("LIBRE")) {
+                            for (Disco d:colecciondisco){
+                                if(!d.getCodigo().equals("LIBRE")){
                                     System.out.println(d);
                                 }
                             }
@@ -65,9 +66,9 @@ public class Main {
                             autor = reader.nextLine();
 
                             for(Disco d:colecciondisco){
-                               if(autor.equals(d.getAutor())){
-                                   System.out.println(d);
-                               }
+                                if(autor.equals(d.getAutor())){
+                                    System.out.println(d);
+                                }
                             }
                         }break;
 
@@ -121,22 +122,19 @@ public class Main {
                         genero = reader.next();
                         System.out.print("Código:");
                         codigo = reader.next();
+
                         for(Disco d:colecciondisco){
-                           while (d.getCodigo().equals(codigo)){
-                               System.out.println("Ese código esta ya asignado a otro disco elija un nuevo código:");
-                               codigo = reader.next();
+                            while (d.getCodigo().equals(codigo)){
+                                System.out.println("Ese código esta ya asignado a otro disco elija un nuevo código:");
+                                codigo = reader.next();
                             }
                         }
                         System.out.print("Duración:");
                         duracion = reader.nextInt();
 
-                        for(int i = 0; i < n;i++){
-                            if(colecciondisco[i].getCodigo().equals("LIBRE")){
-                                colecciondisco[i] = new Disco(codigo,titulo,autor,genero,duracion);
-                                System.out.println("Disco añadido con éxito");
-                                break;
-                            }
-                        }
+                        colecciondisco.add(new Disco(codigo,titulo,autor,genero,duracion));
+                        System.out.println("Disco añadido con éxito");
+
                     }else{
                         System.out.print("Lo siento pero esta llena la colección\n");
                     }
@@ -183,8 +181,9 @@ public class Main {
                         for (Disco d:colecciondisco){
                             if(d.getCodigo().equals(codigo)){
                                 a++;
-                                d.setCodigo("LIBRE");
-                                System.out.println("Borrado con éxito.");
+                                System.out.println("Voy a borrar " + d.getCodigo() + a);
+                                colecciondisco.remove(d);
+
                             }
 
                         }
