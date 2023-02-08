@@ -27,11 +27,18 @@ public class Cartas {
 
     //TOSTRING
 
-
     @Override
     public String toString() {
         return n + " de " + p;
     }
 
+    @Override
+    public boolean equals(Object o) {
+
+        Cartas cartas = (Cartas) o;
+
+        if (!n.equals(cartas.n)) return false;
+        return p.equals(cartas.p);
+    }
 
 }

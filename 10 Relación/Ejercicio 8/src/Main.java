@@ -10,11 +10,14 @@ public class Main {
 
         for(int i = 0; i < 9;i++){
 
-            while(Baraja.contains(a)){
-                a = new Cartas();
+            Cartas b = new Cartas();
+
+            while(Baraja.contains(b)){
+
+                b = new Cartas();
             }
 
-            Baraja.add(a);
+            Baraja.add(b);
         }
 
         for(Cartas c:Baraja){
