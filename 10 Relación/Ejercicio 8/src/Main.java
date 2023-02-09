@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +20,8 @@ public class Main {
 
             Baraja.add(b);
         }
+
+        Collections.sort(Baraja);
 
         for(Cartas c:Baraja){
             System.out.println(c);

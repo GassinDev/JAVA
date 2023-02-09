@@ -1,6 +1,7 @@
+import java.util.List;
 import java.util.Objects;
 
-public class Cartas {
+public class Cartas implements Comparable<Cartas> {
 
     //ATRIBUTOS
     String[] numero = {"as","dos","tres","cuatro","cinco","seis","siete","sota","caballo","rey"};
@@ -41,4 +42,13 @@ public class Cartas {
         return p.equals(cartas.p);
     }
 
+
+    @Override
+    public int compareTo(Cartas o) {
+        if (palo.equals(o.getP())) {
+            return n.compareTo(o.getN());
+        } else {
+            return p.compareTo(o.getP());
+        }
+    }
 }
