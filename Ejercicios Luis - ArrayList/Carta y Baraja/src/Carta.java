@@ -7,8 +7,8 @@ public class Carta {
 
     //ATRIBUTOS
 
-    int numero;
-    TipoPalo palo;
+    private int numero;
+    private TipoPalo palo;
 
     //CONSTRUCTOR
 
