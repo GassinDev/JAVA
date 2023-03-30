@@ -1,4 +1,6 @@
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,7 +11,7 @@ public class Main {
             for(int i = 1; i <= 500;i++){
 
                 if(esPrimo(i)){
-                    bw.write(String.valueOf(i) + " ");
+                    bw.write(i + " ");
                 }
             }
 

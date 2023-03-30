@@ -7,7 +7,7 @@ import java.io.IOException;
 public class Ejercicio3 {
     public static void main(String[] args) {
         if (args.length != 3) {
-            System.out.println("No se reconocieron los argumentos");
+            System.out.println("No se reconocieron los argumentos y el comando es --> Ejercicio3");
             System.exit(-1);
         }
         try {
