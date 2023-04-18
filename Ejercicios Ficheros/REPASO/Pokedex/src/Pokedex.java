@@ -45,7 +45,7 @@ public class Pokedex {
                     capturado = true;
                 }
 
-                listaPokemon.add(new Pokemon(id,nombre,tipo1,tipo2,vida,ataque,ataqueEspecial,defensa,defensaEspecial,velocidad,capturado));
+                listaPokemon.add(new Pokemon(id,nombre,tipo1,tipo2,ataque,defensa,vida,ataqueEspecial,defensaEspecial,velocidad,capturado));
             }
 
             br.close();
@@ -78,18 +78,18 @@ public class Pokedex {
     }
 
     public double porcentajeCapturas(){
-        int totalCapturados = 0,nPokemon = 0;
+        double totalCapturados = 0;
         double porcentaje;
+        double totalPokemons = listaPokemon.size();
         for(Pokemon p: listaPokemon){
-            nPokemon++;
             if(p.capturado = true){
                 totalCapturados++;
             }
         }
 
-        porcentaje = ((double)(totalCapturados/nPokemon))*100;
+        porcentaje = ((totalCapturados/totalPokemons))*100;
 
-        return porcentaje;
+        return totalCapturados;
     }
 
     public Pokemon buscaPokemon(int id) {

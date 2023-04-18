@@ -2,7 +2,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
         Scanner reader = new Scanner(System.in);
 
             Pokedex pq = new Pokedex();
@@ -27,6 +27,14 @@ public class Main {
                         int id;
                         id = reader.nextInt();
                         pq.buscaPokemon(id);
+                    }break;
+
+                    case 2:{
+                        System.out.println(pq.porcentajeCapturas());
+                    }break;
+
+                    case 5:{
+
                     }break;
                 }
             }
