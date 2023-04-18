@@ -63,7 +63,7 @@ public class Pokemon {
         return tipo2;
     }
 
-    public boolean isCapturado() {
+    public boolean getCapturado() {
         return capturado;
     }
 

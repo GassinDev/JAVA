@@ -65,10 +65,9 @@ public class Pokedex {
     public void guardaCSV(String nombreFichero) {
         try {
             FileWriter fw = new FileWriter(nombreFichero);
-            PrintWriter pw = new PrintWriter(nombreFichero);
 
             for(Pokemon p: listaPokemon){
-                pw.println(p.getId() + p.getNombre() + p.getAtaque() + p.getDefensa() + p.getVida() + p.getAtaqueespecial() + p.getDefensaespecial() + p.getVelocidad() + p.getTipo1() + p.getTipo2());
+                fw.write(p.getId() + "," + p.getNombre() + "," + p.getTipo1() +  "," + p.getTipo2() + "," + p.getAtaque() + "," + p.getAtaque() + "," + p.getDefensa()+ "," + p.getVida() + "," + p.getAtaqueespecial()+ "," + p.getDefensaespecial() + "," + p.getVelocidad() + "," + p.getCapturado() + "\n");
             }
 
         } catch (IOException e) {

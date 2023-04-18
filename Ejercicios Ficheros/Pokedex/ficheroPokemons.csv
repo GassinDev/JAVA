@@ -1,1 +1,33 @@
-1Bulbasaur9760111PlantaVeneno2Ivysaur1113110PlantaVeneno3Venusaur1410334PlantaVeneno4Charmander5681013FuegoNinguno5Charmeleon1319143FuegoNinguno6Charizard5790183FuegoVolador7Squirtle1039534AguaNinguno8Wartortle5322145AguaNinguno9Blastoise5615123AguaNinguno10Caterpie9321033BichoNinguno11Metapod9791011BichoNinguno12Butterfree1832133BichoVolador13Weedle2331031BichoVeneno14Kakuna1310647BichoVeneno15Beedrill5229133BichoVeneno16Pidgey8311034NormalVolador17Pidgeotto1131134NormalVolador18Pidgeot5539124NormalVolador19Rattata5331011NormalNinguno20Raticate1118171NormalNinguno21Spearow3120123NormalVolador22Fearow8230111NormalVolador23Ekans9116122VenenoNinguno24Arbok3165511VenenoNinguno25Pikachu1016411EléctricoNinguno26Raichu0130811EléctricoNinguno27Sandshrew1011613TierraNinguno28Sandslash9125111TierraNinguno29Nidoran 11017411VenenoNinguno30Nidorina0120811VenenoNinguno31Nidoqueen1160311VenenoTierra32Nidoran 20195111VenenoNinguno33Nidorino5119109VenenoNinguno34Nidoking1162114VenenoTierra35Clefairy5671011HadaNinguno36Clefable1140311HadaNinguno37Vulpix9099611FuegoNinguno38Ninetales9119911FuegoNinguno39Jigglypuff5515005NormalHada40Wigglytuff1112111NormalHada
+1,Bulbasaur,Planta,Veneno,9,9,7,6,0,1,11,false
+2,Ivysaur,Planta,Veneno,1,1,1,13,1,1,0,false
+3,Venusaur,Planta,Veneno,1,1,4,10,3,3,4,false
+4,Charmander,Fuego,Ninguno,5,5,6,8,10,1,3,true
+5,Charmeleon,Fuego,Ninguno,1,1,3,19,1,4,3,false
+6,Charizard,Fuego,Volador,5,5,7,90,1,8,3,false
+7,Squirtle,Agua,Ninguno,10,10,3,9,5,3,4,false
+8,Wartortle,Agua,Ninguno,5,5,3,22,1,4,5,false
+9,Blastoise,Agua,Ninguno,5,5,6,15,1,2,3,false
+10,Caterpie,Bicho,Ninguno,9,9,3,2,10,3,3,false
+11,Metapod,Bicho,Ninguno,9,9,7,9,10,1,1,false
+12,Butterfree,Bicho,Volador,1,1,8,32,1,3,3,false
+13,Weedle,Bicho,Veneno,2,2,3,3,10,3,1,false
+14,Kakuna,Bicho,Veneno,1,1,3,10,6,4,7,false
+15,Beedrill,Bicho,Veneno,5,5,2,29,1,3,3,false
+16,Pidgey,Normal,Volador,8,8,3,1,10,3,4,false
+17,Pidgeotto,Normal,Volador,1,1,1,31,1,3,4,false
+18,Pidgeot,Normal,Volador,5,5,5,39,1,2,4,false
+19,Rattata,Normal,Ninguno,5,5,3,3,10,1,1,false
+20,Raticate,Normal,Ninguno,1,1,1,18,1,7,1,false
+21,Spearow,Normal,Volador,3,3,1,20,1,2,3,false
+22,Fearow,Normal,Volador,8,8,2,30,1,1,1,false
+23,Ekans,Veneno,Ninguno,9,9,11,6,1,2,2,false
+24,Arbok,Veneno,Ninguno,3,3,1,65,5,1,1,false
+25,Pikachu,Electrico,Ninguno,10,10,1,6,4,1,1,false
+26,Raichu,Electrico,Ninguno,0,0,1,30,8,1,1,false
+27,Sandshrew,Tierra,Ninguno,10,10,1,1,6,1,3,false
+28,Sandslash,Tierra,Ninguno,9,9,1,25,1,1,1,false
+29,Nidoran 1,Veneno,Ninguno,10,10,1,7,4,1,1,false
+30,Nidorina,Veneno,Ninguno,0,0,1,20,8,1,1,false
+31,Nidoqueen,Veneno,Tierra,1,1,1,60,3,1,1,false
+32,Nidoran 2,Veneno,Ninguno,0,0,1,9,51,1,1,false
+33,Nidorino,Veneno,Ninguno,5
