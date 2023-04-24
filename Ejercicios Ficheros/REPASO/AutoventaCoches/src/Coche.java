@@ -16,13 +16,27 @@ public class Coche {
         if(comprobarMatricula(matricula)){
             this.matricula = matricula;
         }else{
-            System.out.println("El coche con matricula " + matricula + " es erroneo" );
+            System.out.println("El coche con matricula " + matricula + " es erroneo." );
         }
-        this.fechaMatriculacion = fechaMatriculacion;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.precio = precio;
 
+        if(LocalDate.now().getYear() > fechaMatriculacion.getYear()) {
+            this.fechaMatriculacion = fechaMatriculacion;
+        }else {
+            System.out.println("La fecha tiene que ser al menos un año más vieja.");
+        }
+
+        if(marca != "" && modelo != ""){
+            this.marca = marca;
+            this.modelo = modelo;
+        }else {
+            System.out.println("Ni el modelo, ni la marca pueden estar vacíos.");
+        }
+
+        if(precio >= 500){
+            this.precio = precio;
+        }else {
+            System.out.println("El precio es incorrecto, debe ser mayor o igual a 500€.");
+        }
 
     }
 
@@ -86,12 +100,6 @@ public class Coche {
 
     @Override
     public String toString() {
-        return "Coche{" +
-                "matricula='" + matricula + '\'' +
-                ", fechaMatriculacion=" + fechaMatriculacion +
-                ", marca='" + marca + '\'' +
-                ", modelo='" + modelo + '\'' +
-                ", precio=" + precio +
-                '}' + "\n\n";
+        return matricula +"\t\t"+marca +"\t"+ modelo +"\t"+ fechaMatriculacion +"\t" + precio;
     }
 }

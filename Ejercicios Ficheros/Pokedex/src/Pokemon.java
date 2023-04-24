@@ -3,12 +3,12 @@ public class Pokemon {
 
     //ATRIBUTOS
     int id,ataque,defensa,vida,ataqueespecial,defensaespecial,velocidad;
-    String nombre,tipo1,tipo2;
+    String nombre,tipo1,habilidad;
     boolean capturado;
 
     //CONSTRUCTOR
 
-    public Pokemon(int id, String nombre, String tipo1,String tipo2, int ataque, int defensa, int vida, int ataqueespecial, int defensaespecial, int velocidad, boolean capturado) {
+    public Pokemon(int id, String nombre, String tipo1, int ataque, int defensa, int vida, int ataqueespecial, int defensaespecial, int velocidad,String habilidad, boolean capturado) {
         this.id = id;
         this.ataque = ataque;
         this.defensa = defensa;
@@ -18,7 +18,7 @@ public class Pokemon {
         this.velocidad = velocidad;
         this.nombre = nombre;
         this.tipo1 = tipo1;
-        this.tipo2 = tipo2;
+        this.habilidad = habilidad;
         this.capturado = capturado;
     }
 
@@ -59,8 +59,8 @@ public class Pokemon {
     public String getTipo1() {
         return tipo1;
     }
-    public String getTipo2() {
-        return tipo2;
+    public String getHabilidad() {
+        return habilidad;
     }
 
     public boolean getCapturado() {
@@ -75,8 +75,18 @@ public class Pokemon {
 
     @Override
     public String toString() {
-        return "Pokemon{" + "id=" + id + ", ataque=" + ataque + ", defensa=" + defensa + ", vida=" + vida + ", ataqueespecial=" + ataqueespecial + ", defensaespecial=" + defensaespecial + ", velocidad=" + velocidad + ", nombre=" + nombre + ", tipo1=" + tipo1 + ", tipo2=" + tipo2 + ", capturado=" + capturado + '}';
+        return "Pokemon{" + "id=" + id + ", ataque=" + ataque + ", defensa=" + defensa + ", vida=" + vida + ", ataqueespecial=" + ataqueespecial + ", defensaespecial=" + defensaespecial + ", velocidad=" + velocidad + ", nombre=" + nombre + ", tipo1=" + tipo1 + ", habilidad=" + habilidad + ", capturado=" + capturado + '}';
     }
 
+    public String toStringSimple(){
+        return "Pokemon{" + "id=" + id + ", nombre=" + nombre + ", tipo1=" + tipo1 + '}';
+    }
 
+    public String toStringSimple2(){
+        return "Pokemon{" + " nombre=" + nombre + ", tipo1=" + tipo1 + ", capturado=" + capturado + '}';
+    }
+
+    public String toStringSimple3(){
+        return "Pokemon{" + " nombre=" + nombre + ", id=" + id + '}';
+    }
 }

@@ -29,20 +29,18 @@ public class Pokedex {
                 line = br.readLine();
 
                 if(line != null) {
-
-                    System.out.println(line);
                     String[] p = line.split(",");
 
                     int id = Integer.parseInt(p[0]);
                     String nombre = p[1];
                     String tipo1 = p[2];
-                    String tipo2 = p[3];
-                    int vida = Integer.parseInt(p[4]);
-                    int ataque = Integer.parseInt(p[5]);
-                    int ataqueEspecial = Integer.parseInt(p[6]);
-                    int defensa = Integer.parseInt(p[7]);
-                    int defensaEspecial = Integer.parseInt(p[8]);
-                    int velocidad = Integer.parseInt(p[9]);
+                    int vida = Integer.parseInt(p[3]);
+                    int ataque = Integer.parseInt(p[4]);
+                    int ataqueEspecial = Integer.parseInt(p[5]);
+                    int defensa = Integer.parseInt(p[6]);
+                    int defensaEspecial = Integer.parseInt(p[7]);
+                    int velocidad = Integer.parseInt(p[8]);
+                    String habilidad = p[9];
                     boolean capturado;
 
                     if (Objects.equals(p[10], "false")) {
@@ -51,7 +49,7 @@ public class Pokedex {
                         capturado = true;
                     }
 
-                    listaPokemon.add(new Pokemon(id, nombre, tipo1, tipo2, ataque, defensa, vida, ataqueEspecial, defensaEspecial, velocidad, capturado));
+                    listaPokemon.add(new Pokemon(id, nombre, tipo1, ataque, defensa, vida, ataqueEspecial, defensaEspecial, velocidad,habilidad, capturado));
                 }
             }
 
@@ -67,8 +65,10 @@ public class Pokedex {
             FileWriter fw = new FileWriter(nombreFichero);
 
             for(Pokemon p: listaPokemon){
-                fw.write(p.getId() + "," + p.getNombre() + "," + p.getTipo1() +  "," + p.getTipo2() + "," + p.getAtaque() + "," + p.getAtaque() + "," + p.getDefensa()+ "," + p.getVida() + "," + p.getAtaqueespecial()+ "," + p.getDefensaespecial() + "," + p.getVelocidad() + "," + p.getCapturado() + "\n");
+                fw.write(p.getId() + "," + p.getNombre() + "," + p.getTipo1() + "," + p.getAtaque() + "," + p.getDefensa()+ "," + p.getVida() + "," + p.getAtaqueespecial()+ "," + p.getDefensaespecial() + "," + p.getVelocidad() + "," + p.getHabilidad() + ","+ p.getCapturado() + "\n");
             }
+
+            fw.close();
 
         } catch (IOException e) {
             System.out.println("error!!" + e.getMessage());
@@ -79,8 +79,8 @@ public class Pokedex {
     public void capturaPokemon(){
         String nombrePokemon;
 
-        System.out.println("Dime el nombre del personaje que has capturado");
-        nombrePokemon = reader.next();
+        System.out.println("Dime el nombre del Pokemon que has capturado");
+        nombrePokemon = reader.nextLine();
 
         for(Pokemon p: listaPokemon){
             if(Objects.equals(p.nombre, nombrePokemon)){
@@ -104,7 +104,7 @@ public class Pokedex {
         return porcentaje;
     }
 
-    public Pokemon buscaPokemon(int id) {
+    public Pokemon buscaPokemonId(int id) {
 
         Pokemon poke = null;
 
@@ -116,7 +116,7 @@ public class Pokedex {
         return poke;
     }
 
-    public Pokemon buscaPokemon(String nombrePoke) {
+    public Pokemon buscaPokemonNombre(String nombrePoke) {
 
         Pokemon poke = null;
 
@@ -138,6 +138,51 @@ public class Pokedex {
         return s;
     }
 
+    public String listadoPokemonCapturados(){
 
+        String s = "";
+
+        for(Pokemon p : listaPokemon){
+
+            if(p.getCapturado()){
+                s += p.toStringSimple() + "\n";
+            }
+        }
+        return s;
+    }
+
+    public String listadoPokemonTipo(){
+
+        String s = "";
+        String tipo;
+
+        System.out.println("Dime el tipo");
+        tipo = reader.nextLine();
+
+        for(Pokemon p : listaPokemon){
+
+            if(Objects.equals(tipo, p.tipo1)){
+                s += p.toStringSimple2() + "\n";
+            }
+        }
+        return s;
+    }
+
+    public String listadoPokemonTipoCapturado(){
+
+        String s = "";
+        String tipo;
+
+        System.out.println("Dime el tipo");
+        tipo = reader.nextLine();
+
+        for(Pokemon p : listaPokemon){
+
+            if(Objects.equals(tipo, p.tipo1) && p.getCapturado()){
+                s += p.toStringSimple3() + "\n";
+            }
+        }
+        return s;
+    }
 
 }
