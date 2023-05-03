@@ -6,21 +6,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+  <title>JSP - MENU</title>
+  <link rel="stylesheet" type="text/css" href="CSS/menu.css">
 </head>
-<body>
-<h1><%= "Hello World!" %></h1>
-<%
-  Class.forName("org.sqlite.JDBC");
-  Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/juang/Desktop/JAVA/PROYECTO/dbProyect");
-  Statement s = conexion.createStatement();
-  ResultSet listado = s.executeQuery ("SELECT * FROM Contribuyentes");
-  while (listado.next()) {
-    out.println(listado.getString("Nombre"));
-  }
-  conexion.close();
-%>
+<body id="contenedor">
+<img src="Recursos/MENU.jpg" width="60%" height="60%">
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<p><a class="enla" href="sesion.jsp">Inicio de sesión</a><br></p>
+<p><a class="enla" href="registro.jsp">Registrarme en la WEB</a><br></p>
 </body>
 </html>

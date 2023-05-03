@@ -1,0 +1,31 @@
+
+---------------LIBRERIAS---------------------------------------
+
+
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+
+--------------------------CONEXIÓN---------------------------------
+
+<%
+  Class.forName("org.sqlite.JDBC");
+  Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/Gassin/Desktop/PROG/JAVA/PRUEBAS CON WEAPP/myDataBase");
+  Statement s = conexion.createStatement();
+  ResultSet listado = s.executeQuery ("SELECT * FROM Alumnos");
+  while (listado.next()) {
+    out.println(listado.getString("Nombre") + "," + listado.getString("Id"));
+  }
+  conexion.close();
+%>
+
+-------------------DEPENDECIAS-------------------------------------
+
+ <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+      <dependency>
+          <groupId>org.xerial</groupId>
+          <artifactId>sqlite-jdbc</artifactId>
+          <version>3.41.2.1</version>
+      </dependency>
+

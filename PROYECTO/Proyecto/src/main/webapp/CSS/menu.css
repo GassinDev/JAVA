@@ -1,0 +1,33 @@
+p{
+    font-size: 30px;
+}
+
+body{
+    background: lavender;
+}
+
+a.enla{
+    color: darkgray;
+    font-style: italic;
+    background-color: black;
+    text-decoration:none;
+}
+
+a:hover {
+    color: yellow;
+    border-bottom:2px dotted greenyellow;
+}
+
+h1{
+    background: black;
+    color: gray;
+}
+
+p.Notificacion{
+    font-size: 1rem;
+}
+
+#contenedor {
+    width: 300px;
+    margin: 0 auto;
+}
