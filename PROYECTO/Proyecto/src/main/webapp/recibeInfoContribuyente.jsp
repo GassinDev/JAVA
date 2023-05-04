@@ -3,6 +3,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@ page import="java.util.Objects" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -14,7 +15,7 @@
 <body>
 <%
   Class.forName("org.sqlite.JDBC");
-  Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/Gassin/Desktop/PROG/JAVA/PROYECTO/dbProyect");
+  Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/juang/Desktop/JAVA/PROYECTO/dbProyect");
   Statement s = conexion.createStatement();
   request.setCharacterEncoding("UTF-8");
   ResultSet res;
@@ -32,7 +33,9 @@
           + ",'" + request.getParameter("Nombre")
           + "','" + request.getParameter("Apellidos")
           + "'," + (Integer.parseInt(request.getParameter("Telefono"))
-          + ",'" + request.getParameter("Especialidad") + "')");
+          + ",'" + request.getParameter("Especialidad")
+          + "','" + request.getParameter("Usuario")
+          + "','" + request.getParameter("Contraseña") + "')");
 
   s.execute(insercion);
   conexion.close();

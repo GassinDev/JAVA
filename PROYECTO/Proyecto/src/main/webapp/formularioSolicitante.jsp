@@ -9,11 +9,11 @@
 <head>
   <title>JSP - Hello World</title>
   <link rel="stylesheet" type="text/css" href="CSS/menu.css">
-  <h1> REGISTRO PARA INVESTIGADORES </h1>
+  <h1> REGISTRO PARA SOLICITANTES </h1>
 </head>
 <body>
 
-<form method="get" action="recibeInfoInvestigador.jsp">
+<form method="get" action="recibeInfoSolicitantes.jsp">
   Nombre    <input type="text" name="Nombre"/></br>
   Apellidos <input type="text" name="Apellidos"/></br>
   Teléfono  <input type="tel" name="Telefono"/></br>

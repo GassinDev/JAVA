@@ -18,6 +18,8 @@
   Apellidos <input type="text" name="Apellidos"/></br>
   Teléfono  <input type="tel" name="Telefono"/></br>
   Especialidad <input type="text" name="Especialidad"/></br>
+  Usuario <input type="text" name="Usuario"/></br>
+  Contraseña <input type="text" name="Contraseña"/></br>
   <input type="submit" value="Aceptar">
 </form>
 

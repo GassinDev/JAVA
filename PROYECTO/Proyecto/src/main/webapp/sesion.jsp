@@ -14,7 +14,7 @@
 
 <%
   Class.forName("org.sqlite.JDBC");
-  Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/Gassin/Desktop/PROG/JAVA/PROYECTO/dbProyect");
+  Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/juang/Desktop/JAVA/PROYECTO/dbProyect");
   Statement s = conexion.createStatement();
 
   conexion.close();

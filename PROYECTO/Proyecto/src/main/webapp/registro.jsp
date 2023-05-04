@@ -26,7 +26,7 @@
     if(Objects.equals(request.getParameter("tipo"), "Contribuyente")){
         response.sendRedirect("formularioContribuyente.jsp");
     }else if(Objects.equals(request.getParameter("tipo"), "Investigador")){
-        response.sendRedirect("formularioInvestigador.jsp");
+        response.sendRedirect("formularioSolicitante.jsp");
     }
 %>
 
