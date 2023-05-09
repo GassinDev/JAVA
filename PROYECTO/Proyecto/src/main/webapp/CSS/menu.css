@@ -1,5 +1,5 @@
 p{
-    font-size: 30px;
+    font-size: 50px;
 }
 
 body{
@@ -28,11 +28,18 @@ p.notificacion{
 }
 
 #contenedor {
-    width: 300px;
+    width: 500px;
     margin: 0 auto;
 }
 
-
+.fde{
+    font-size: 30px;
+}
+input,select{
+    width: 220px;
+    height: 30px;
+    font-size:20px ;
+}
 p.perfil{
     font-size: 20px;
     color: darkgray;
@@ -41,6 +48,3 @@ p.perfil{
     text-decoration:none;
 }
 
-img{
-    box-shadow: 13px 10px black;
-}

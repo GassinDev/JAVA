@@ -5,6 +5,7 @@
 <%@ page import="com.example.proyecto.HelloServlet" %>
 <%@ page import="com.example.proyecto.Usuarios" %>
 <%@ page import="com.example.proyecto.Contribuyente" %>
+<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -24,10 +25,13 @@
 
     if(lucontri.cargarMisDartosUsuarioContri(usuario,contraseña) != null){
       out.println("<img src=Recursos/perfillogo.jpg width=20% height=20% >");
-      out.println(((lucontri.cargarMisDartosUsuarioContri(usuario,contraseña)).toString()));
+      out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioContri(usuario,contraseña)).toString()) + "</p>");
     } else if (lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña) != null) {
-      out.println(((lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString()));
-    } else{
+      out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString()) + "</p>");
+    } else if(Objects.equals(usuario, "admin") && Objects.equals(contraseña, "Aa1234")){
+      out.println("Eres el admin");
+      out.println("<a href=tupu.jsp>Borrar</a>");
+    }else{
       out.println("Este usuario no se encuentra registrado en nuestra web");
     }
   %>

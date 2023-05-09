@@ -13,7 +13,7 @@
 <body id="contenedor">
 <p><img src="Recursos/MENU.jpg" width="60%" height="60%"></p>
 <br/>
-<p><a class="enla" href="sesion.jsp">Inicio de sesión</a><br></p>
-<p><a class="enla" href="registro.jsp">Registrarme en la WEB</a><br></p>
+<p><a class="enla" href="Formularios/sesion.jsp">Inicio de sesión</a><br></p>
+<p><a class="enla" href="Formularios/registro.jsp">Registrarme en la WEB</a><br></p>
 </body>
 </html>

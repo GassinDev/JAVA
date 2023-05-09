@@ -9,12 +9,12 @@
 <html>
 <head>
   <title>JSP - Hello World</title>
-  <link rel="stylesheet" type="text/css" href="CSS/menu.css">
+  <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
   <h1> REGISTRO PARA SOLICITANTES </h1>
 </head>
 <body>
 
-<form method="get" action="recibeInfoSolicitantes.jsp">
+<form method="get" action="../recibeInfoSolicitantes.jsp" class="fde">
   Nombre    <input type="text" name="Nombre"/></br>
   Apellidos <input type="text" name="Apellidos"/></br>
   Teléfono  <input type="tel" name="Telefono"/></br>
@@ -25,7 +25,7 @@
 </form>
 
 <br/>
-<a  href="index.jsp" >
-  <img src="Recursos/vueltaInicioIcon.png" alt="Volver al menú de Inicio" width="5%" height="5%"></a>
+<a  href="registro.jsp" >
+  <img src="../Recursos/vueltaInicioIcon.png" alt="Volver atras" width="5%" height="5%"></a>
 </body>
 </html>

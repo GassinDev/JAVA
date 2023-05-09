@@ -9,12 +9,12 @@
 <html>
 <head>
     <title>JSP - Hello World</title>
-    <link rel="stylesheet" type="text/css" href="CSS/menu.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
 <h1><%= "REGISTRO" %></h1>
 
-<form method="get" action="registro.jsp">
+<form method="get" action="registro.jsp" class="fde">
     <select name="tipo">
         <option >Contribuyente</option>
         <option>Investigador</option>
@@ -34,7 +34,7 @@
 
 
 <br/>
-<a href="index.jsp" >
-    <img src="Recursos/vueltaInicioIcon.png" alt="Volver al menú de Inicio" width="5%" height="5%"></a>
+<a href="../index.jsp" >
+    <img src="../Recursos/vueltaInicioIcon.png" alt="Volver al menú de Inicio" width="5%" height="5%"></a>
 </body>
 </html>

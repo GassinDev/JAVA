@@ -8,19 +8,23 @@
 <html>
 <head>
   <title>JSP - Hello World</title>
-  <link rel="stylesheet" type="text/css" href="CSS/menu.css">
-  <h1> INICIO DE SESIÓN</h1>
+  <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
+  <h1> REGISTRO PARA CONTRIBUYENTES </h1>
 </head>
 <body>
 
-<form method="get" action="perfilRegistro.jsp">
+<form method="get" action="../recibeInfoContribuyente.jsp" class="fde">
+  Nombre    <input type="text" name="Nombre"/></br>
+  Apellidos <input type="text" name="Apellidos"/></br>
+  Teléfono  <input type="tel" name="Telefono"/></br>
+  Especialidad <input type="text" name="Especialidad"/></br>
   Usuario <input type="text" name="Usuario"/></br>
   Contraseña <input type="password" name="Contraseña"/></br>
   <input type="submit" value="Aceptar">
 </form>
 
 <br/>
-<a  href="perfilRegistro.jsp" >
-  <img src="Recursos/vueltaInicioIcon.png" alt="Volver al menú de Inicio" width="5%" height="5%"></a>
+<a  href="registro.jsp" >
+  <img src="../Recursos/vueltaInicioIcon.png" alt="Volver atras" width="5%" height="5%"></a>
 </body>
 </html>
