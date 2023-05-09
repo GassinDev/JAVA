@@ -27,10 +27,12 @@
       out.println("<img src=Recursos/perfillogo.jpg width=20% height=20% >");
       out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioContri(usuario,contraseña)).toString()) + "</p>");
     } else if (lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña) != null) {
+      out.println("<img src=Recursos/perfillogo.jpg width=20% height=20% >");
       out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString()) + "</p>");
     } else if(Objects.equals(usuario, "admin") && Objects.equals(contraseña, "Aa1234")){
       out.println("Eres el admin");
-      out.println("<a href=tupu.jsp>Borrar</a>");
+      out.println("<p><a class=enla href=FuncionesAdmin/BorrarUsuAdmin.jsp >Borrar Usuarios</a><br></p>");
+      out.println("<p><a class=enla href=FuncionesAdmin/EditarUsuAdmin.jsp >Editar Usuarios</a><br></p>");
     }else{
       out.println("Este usuario no se encuentra registrado en nuestra web");
     }
