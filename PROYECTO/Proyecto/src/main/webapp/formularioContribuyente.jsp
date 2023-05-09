@@ -19,7 +19,7 @@
   Teléfono  <input type="tel" name="Telefono"/></br>
   Especialidad <input type="text" name="Especialidad"/></br>
   Usuario <input type="text" name="Usuario"/></br>
-  Contraseña <input type="text" name="Contraseña"/></br>
+  Contraseña <input type="password" name="Contraseña"/></br>
   <input type="submit" value="Aceptar">
 </form>
 

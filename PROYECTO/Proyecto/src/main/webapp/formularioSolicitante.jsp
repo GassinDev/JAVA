@@ -3,6 +3,7 @@
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@ page import="java.util.Objects" %>
+<%@ page import="com.example.proyecto.HelloServlet" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -18,6 +19,8 @@
   Apellidos <input type="text" name="Apellidos"/></br>
   Teléfono  <input type="tel" name="Telefono"/></br>
   Ayuda <input type="text" name="Ayuda"/></br>
+  Usuario <input type="text" name="Usuario"/></br>
+  Contraseña <input type="password" name="Contraseña"/></br>
   <input type="submit" value="Aceptar">
 </form>
 

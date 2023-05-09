@@ -23,11 +23,24 @@ h1{
     color: gray;
 }
 
-p.Notificacion{
+p.notificacion{
     font-size: 1rem;
 }
 
 #contenedor {
     width: 300px;
     margin: 0 auto;
+}
+
+
+p.perfil{
+    font-size: 20px;
+    color: darkgray;
+    font-style: italic;
+    background-color: black;
+    text-decoration:none;
+}
+
+img{
+    box-shadow: 13px 10px black;
 }

@@ -9,18 +9,18 @@
 <head>
   <title>JSP - Hello World</title>
   <link rel="stylesheet" type="text/css" href="CSS/menu.css">
+  <h1> INICIO DE SESIÓN</h1>
 </head>
 <body>
 
-<%
-  Class.forName("org.sqlite.JDBC");
-  Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/juang/Desktop/JAVA/PROYECTO/dbProyect");
-  Statement s = conexion.createStatement();
+<form method="get" action="perfilRegistro.jsp">
+  Usuario <input type="text" name="Usuario"/></br>
+  Contraseña <input type="password" name="Contraseña"/></br>
+  <input type="submit" value="Aceptar">
+</form>
 
-  conexion.close();
-%>
 <br/>
-<a  href="index.jsp" >
+<a  href="perfilRegistro.jsp" >
   <img src="Recursos/vueltaInicioIcon.png" alt="Volver al menú de Inicio" width="5%" height="5%"></a>
 </body>
 </html>
