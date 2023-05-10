@@ -19,8 +19,6 @@
   Statement s = HelloServlet.conectarBD();
   Connection conexion = HelloServlet.nombradorBD();
 
-  request.setCharacterEncoding("UTF-8");
-
   String insercionUsu = "INSERT INTO Usuarios VALUES ('"
           + request.getParameter("Usuario")
           + "','" + request.getParameter("Contraseña") + "')";

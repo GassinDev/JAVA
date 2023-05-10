@@ -31,8 +31,7 @@
       out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString()) + "</p>");
     } else if(Objects.equals(usuario, "admin") && Objects.equals(contraseña, "Aa1234")){
       out.println("Eres el admin");
-      out.println("<p><a class=enla href=FuncionesAdmin/BorrarUsuAdmin.jsp >Borrar Usuarios</a><br></p>");
-      out.println("<p><a class=enla href=FuncionesAdmin/EditarUsuAdmin.jsp >Editar Usuarios</a><br></p>");
+      out.println("<p><a class=enla href=FuncionesAdmin/BorraEditaAdmin.jsp >Editar / Borrar Usuarios</a><br></p>");
     }else{
       out.println("Este usuario no se encuentra registrado en nuestra web");
     }

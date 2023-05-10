@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 import static java.lang.System.out;
@@ -76,8 +77,6 @@ public class Usuarios {
 
         }
     }
-
-
 
     public String listarDatosContributentes(){
 
@@ -163,5 +162,21 @@ public class Usuarios {
         return null;
     }
 
+    public void borraUsuarios(String usuario){
+        for(Contribuyente c : listaContribuidores){
+            if(Objects.equals(usuario, c.getUsuario())){
+                listaContribuidores.remove(c);
+            }
+        }
 
+        for(Solicitante s : listaSolicitantes){
+            if(Objects.equals(usuario, s.getUsuario())){
+                listaSolicitantes.remove(s);
+            }
+        }
+    }
+
+    public void EditaUsuarios(String usuario){
+
+    }
 }

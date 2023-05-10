@@ -17,7 +17,7 @@
 <form method="get" action="registro.jsp" class="fde">
     <select name="tipo">
         <option >Contribuyente</option>
-        <option>Investigador</option>
+        <option>Solicitante</option>
         <input type="submit" value="Aceptar">
     </select>
 </form>
@@ -26,7 +26,7 @@
 <%
     if(Objects.equals(request.getParameter("tipo"), "Contribuyente")){
         response.sendRedirect("formularioContribuyente.jsp");
-    }else if(Objects.equals(request.getParameter("tipo"), "Investigador")){
+    }else if(Objects.equals(request.getParameter("tipo"), "Solicitante")){
         response.sendRedirect("formularioSolicitante.jsp");
     }
 %>
