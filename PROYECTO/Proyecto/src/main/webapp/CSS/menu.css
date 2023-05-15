@@ -1,49 +1,186 @@
 p{
-    font-size: 50px;
+    font-size: 30px;
 }
+
 
 body{
-    background: lavender;
+    font-family: Richard;
+    color:white;
+    background-image: url("../Recursos/Imagenes/fondo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-a.enla{
-    color: darkgray;
-    font-style: italic;
-    background-color: black;
+@font-face {
+    font-family: 'Richard';
+    src: url("../Recursos/fuentes/Richard Samuels.otf");
+}
+img.logo{
+    width: 70px;
+    height: auto;
+    padding-right: 3px;
+    margin-left: 1px;
+}
+a{
+    color: white;
+    font-family: Richard;
+    font-size: 35px;
     text-decoration:none;
 }
 
-a:hover {
-    color: yellow;
-    border-bottom:2px dotted greenyellow;
+#barraNavegacion ul{
+    list-style-type: none;
+    text-align: center;
+    position: fixed;
+    top: 3%;
+    width: 100%;
+    right: 0;
+    left: 20%;
 }
 
-h1{
-    background: black;
-    color: gray;
+#barraNavegacion li{
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
 }
 
+#barraNavegacion li a {
+    padding: 2px 7px 2px 7px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+}
+
+#barraNavegacion a:hover{
+    background-color: #333333;
+}
+
+h1.titulo{
+    font-family: Richard;
+    color: white;
+    font-size: 100px;
+    margin-top: 0px;
+}
+h2.titulosPa{
+    font-size: 40px;
+}
+div.divglo{
+    display: flex;
+}
+section{
+    display: flex;
+    width: 900px;
+    height: 630px;
+    margin: 0px;
+    padding:0px ;
+}
+
+section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 50%;
+    transition: .5s ease;
+}
+
+section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+div.div1{
+    margin-left: 5%;
+}
+
+div.div2{
+    margin-right: 5%;
+    margin-left: 5%;
+}
 p.notificacion{
     font-size: 1rem;
 }
 
-#contenedor {
-    width: 500px;
-    margin: 0 auto;
-}
 
 .fde{
     font-size: 30px;
 }
 input,select{
-    width: 220px;
-    height: 30px;
-    font-size:20px ;
+    width: 520px;
+    height: 60px;
+    font-size:40px ;
 }
 p.perfil{
     font-size: 20px;
-    color: darkgray;
-    font-style: italic;
-    background-color: black;
+    color: white;
+    font-family: Richard;
 }
+
+h2.tfor{
+    font-size: 100px;
+    text-align: center;
+}
+
+h2.tfor2{
+    font-size: 80px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* PAGINA DE ELEJIR DE QUE MANERA QUIERES REGISTRARTE */
+
+
+form.fde{
+    border: 1px solid ghostwhite;
+    border-radius: 5px;
+    padding: 17px;
+    width: 540px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+input.boton{
+    font-family:Richard;
+    font-weight:bold;
+    color:indianred;
+    background:ghostwhite;
+}
+
+select{
+    margin-bottom: 17px;
+}
+
+/* PAGINA DE EDITAR USUS*/
+
+input.boton2{
+    font-family:Richard;
+    font-weight:bold;
+    color:steelblue;
+    background:ghostwhite;
+    width: 100px;
+    height: 50px;
+    font-size: 20px;
+}
+
+table{
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+caption{
+    font-size: 25px;
+}
+table.tabla1{
+    top: 20%;
+}
+
+table.tabla2{
+    top: 60%;
+}
+
 

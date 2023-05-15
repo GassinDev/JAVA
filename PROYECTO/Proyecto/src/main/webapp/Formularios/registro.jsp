@@ -12,16 +12,18 @@
     <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
-<h1><%= "REGISTRO" %></h1>
 
-<form method="get" action="registro.jsp" class="fde">
-    <select name="tipo">
-        <option >Contribuyente</option>
-        <option>Solicitante</option>
-        <input type="submit" value="Aceptar">
-    </select>
-</form>
+<div class="opcion">
+    <h2 class="tfor">ELIJE COMO QUIERES REGISTRARTE</h2>
 
+    <form method="get" action="registro.jsp" class="fde">
+        <select name="tipo">
+            <option >Contribuyente</option>
+            <option>Solicitante</option>
+            <br><input type="submit" value="Aceptar" class="boton">
+        </select>
+    </form>
+</div>
 
 <%
     if(Objects.equals(request.getParameter("tipo"), "Contribuyente")){
@@ -34,7 +36,6 @@
 
 
 <br/>
-<a href="../index.jsp" >
-    <img src="../Recursos/vueltaInicioIcon.png" alt="Volver al menú de Inicio" width="5%" height="5%"></a>
+
 </body>
 </html>

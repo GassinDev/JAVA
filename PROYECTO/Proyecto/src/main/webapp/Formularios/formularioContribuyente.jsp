@@ -9,7 +9,7 @@
 <head>
   <title>JSP - Hello World</title>
   <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
-  <h1> REGISTRO PARA CONTRIBUYENTES </h1>
+  <h2 class="tfor2"> REGISTRO PARA CONTRIBUYENTES </h2>
 </head>
 <body>
 
@@ -20,11 +20,9 @@
   Especialidad <input type="text" name="Especialidad"/></br>
   Usuario <input type="text" name="Usuario"/></br>
   Contraseña <input type="password" name="Contraseña"/></br>
-  <input type="submit" value="Aceptar">
+  </br><input type="submit" value="Aceptar" class="boton">
 </form>
 
 <br/>
-<a  href="registro.jsp" >
-  <img src="../Recursos/vueltaInicioIcon.png" alt="Volver atras" width="5%" height="5%"></a>
 </body>
 </html>

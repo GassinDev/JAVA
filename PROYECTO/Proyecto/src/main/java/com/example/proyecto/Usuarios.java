@@ -176,7 +176,15 @@ public class Usuarios {
         }
     }
 
-    public void EditaUsuarios(String usuario){
+    public boolean BuscaUsuarios(String usuario){
 
+        boolean hayUsu = false;
+
+        for(Contribuyente c: listaContribuidores){
+            if(Objects.equals(usuario, c.getUsuario())){
+                hayUsu = true;
+            }
+        }
+        return hayUsu;
     }
 }

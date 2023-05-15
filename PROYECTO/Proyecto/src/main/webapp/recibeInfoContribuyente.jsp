@@ -35,7 +35,7 @@
   conexion.close();
 %>
 
-<p class="notificacion"> Estás registrado en nuestra web como Contribuyente, en 5 segundos serás redirigido al menú</p>
+<h2 class="tfor"> Estás registrado en nuestra web como Contribuyente, en 5 segundos serás redirigido al menú</h2>
 <br/>
 </body>
 </html>

@@ -9,18 +9,16 @@
 <head>
   <title>JSP - Hello World</title>
   <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
-  <h1> INICIO DE SESIÓN</h1>
 </head>
 <body>
-
+<h2 class="tfor"> INICIO DE SESIÓN</h2>
 <form method="get" action="../perfilRegistro.jsp" class="fde">
   Usuario <input type="text" name="Usuario"/></br>
   Contraseña <input type="password" name="Contraseña"/></br>
-  <input type="submit" value="Aceptar">
+  </br> <input type="submit" value="Aceptar" class="boton">
 </form>
 
 <br/>
-<a  href="../perfilRegistro.jsp" >
-  <img src="../Recursos/vueltaInicioIcon.png" alt="Volver al menú de Inicio" width="5%" height="5%"></a>
+
 </body>
 </html>

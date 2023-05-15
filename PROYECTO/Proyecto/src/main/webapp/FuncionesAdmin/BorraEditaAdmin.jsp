@@ -9,7 +9,7 @@
 <html>
 <head>
     <title>JSP - MENU</title>
-    <link rel="stylesheet" type="text/css" href="CSS/menu.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body id="contenedor">
 
@@ -18,12 +18,12 @@
     Connection conexion = HelloServlet.nombradorBD();
 
     ResultSet listado = s.executeQuery ("SELECT * FROM Contribuyentes");
-    ResultSet listado2 = s.executeQuery ("SELECT * FROM Solicitantes");
 
 %>
 
-<h2>Lista de los Contribuyentes</h2>
-<table border="1">
+
+<table border="1" class="tabla1">
+    <caption>Lista de los Contribuyentes</caption>
     <tr><th>Usuario</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Especialidad</th><th></th></tr>
     <%
         while (listado.next()) {
@@ -31,23 +31,33 @@
             out.println("<td>" + listado.getString("Nombre") + "</td>");
             out.println("<td>" + listado.getString("Apellidos") + "</td>");
             out.println("<td>" + listado.getString("Telefono") + "</td>");
+            out.println("<td>" + listado.getString("Especialidad") + "</td>");
 
     %>
     <td>
         <form method="get" action="BorraUsu.jsp">
             <input type="hidden" name="Usuario" value="<%=listado.getString("Usuario") %>"/>
-            <input type="submit" value="borrar">
+            <input type="submit" value="Borrar" class="boton2">
+        </form>
+    </td>
+    <td>
+        <form method="get" action="FormularioEditaUsuContri.jsp">
+            <input type="hidden" name="Usuario" value="<%=listado.getString("Usuario") %>"/>
+            <input type="submit" value="Editar" class="boton2">
         </form>
     </td></tr>
     <%
         }
         listado.close();
+
+        ResultSet listado2 = s.executeQuery ("SELECT * FROM Solicitantes");
     %>
 
 </table>
 
-<h2>Lista de los Solicitantes</h2>
-<table border="1">
+
+<table border="1" class="tabla2">
+    <caption>Lista de los Solicitantes</caption>
     <tr><th>Usuario</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Ayuda</th></tr>
     <%
         while (listado2.next()) {
@@ -60,7 +70,13 @@
     <td>
         <form method="get" action="BorraUsu.jsp">
             <input type="hidden" name="Usuario" value="<%=listado2.getString("Usuario") %>"/>
-            <input type="submit" value="borrar">
+            <input type="submit" value="Borrar" class="boton2">
+        </form>
+    </td>
+    <td>
+        <form method="get" action="FormularioEditaUsuSoli.jsp">
+            <input type="hidden" name="Usuario" value="<%=listado2.getString("Usuario") %>"/>
+            <input type="submit" value="Editar" class="boton2">
         </form>
     </td></tr>
     <%

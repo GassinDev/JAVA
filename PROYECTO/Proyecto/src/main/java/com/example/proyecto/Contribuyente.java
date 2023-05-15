@@ -23,8 +23,6 @@ public class Contribuyente {
     }
 
     //METODOS
-
-
     public String getUsuario() { return usuario; }
 
     public String getNombre() {
