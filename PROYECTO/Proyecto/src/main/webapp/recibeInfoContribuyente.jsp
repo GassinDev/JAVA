@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="CSS/menu.css">
   <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=index.jsp">
 </head>
-<body>
+<body class="loading">
 <%
   Statement s = HelloServlet.conectarBD();
   Connection conexion = HelloServlet.nombradorBD();
@@ -36,6 +36,7 @@
 %>
 
 <h2 class="tfor"> Estás registrado en nuestra web como Contribuyente, en 5 segundos serás redirigido al menú</h2>
+<div class="loader"></div>
 <br/>
 </body>
 </html>

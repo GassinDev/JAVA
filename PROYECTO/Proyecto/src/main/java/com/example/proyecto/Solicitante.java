@@ -10,12 +10,12 @@ public class Solicitante {
     String ayuda;
 
     //CONSTRUCTOR
-    public Solicitante(String usuario, String nombre, String apellidos, int telefono, String especialidad) {
+    public Solicitante(String usuario, String nombre, String apellidos, int telefono, String ayuda) {
         this.usuario = usuario;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
-        this.ayuda = especialidad;
+        this.ayuda = ayuda;
     }
 
     public Solicitante() {

@@ -30,7 +30,7 @@
   </div>
   <div class="div2">
     <article class="info">
-      <h2 class="titulosPa"> Solicita tus ayudas en Solicitenos</h2>
+      <h2 class="titulosPa"><span>Solicita tus ayudas en Solicitenos</span> </h2>
       <p>
       Obtendrás todo tipos de ayudas en nuestra página web,
       de mano de gente solidaria y de gente profesional,

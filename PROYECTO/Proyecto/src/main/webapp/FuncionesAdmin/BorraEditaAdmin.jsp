@@ -20,7 +20,11 @@
     ResultSet listado = s.executeQuery ("SELECT * FROM Contribuyentes");
 
 %>
-
+<div class="edicion">
+    <ul>
+        <li><a class="inicio" href="BorraEditaAdmin.jsp">Salir de Edición de Usuarios</a></li>
+    </ul>
+</div>
 
 <table border="1" class="tabla1">
     <caption>Lista de los Contribuyentes</caption>

@@ -18,6 +18,7 @@
 
     s.executeUpdate("DELETE FROM Contribuyentes WHERE Usuario ='" + request.getParameter("Usuario") + "'");
     s.executeUpdate("DELETE FROM Solicitantes WHERE Usuario ='" + request.getParameter("Usuario") + "'");
+    s.executeUpdate("DELETE FROM Usuarios WHERE Usuario ='" + request.getParameter("Usuario") + "'");
 %>
 <script>document.location = "BorraEditaAdmin.jsp"</script>
 </body>

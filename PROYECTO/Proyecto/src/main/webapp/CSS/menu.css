@@ -1,3 +1,23 @@
+/* TEXTO MOVIMIENTO INICIO*/
+
+span {
+    display: block;
+    white-space: nowrap;
+    width: 26ch;
+    animation: typing 2s steps(26), blink .5s infinite step-end alternate;
+    overflow:hidden;
+}
+
+@keyFrames typing {
+
+    from { width: 0}
+}
+
+@keyFrames blink {
+    50% { border-color: transparent}
+}
+
+/* PAGINA DE INICIO*/
 p{
     font-size: 30px;
 }
@@ -56,7 +76,6 @@ a{
 }
 
 h1.titulo{
-    font-family: Richard;
     color: white;
     font-size: 100px;
     margin-top: 0px;
@@ -154,7 +173,7 @@ select{
     margin-bottom: 17px;
 }
 
-/* PAGINA DE EDITAR USUS*/
+/* PAGINA DE EDITAR USUS ADMIN*/
 
 input.boton2{
     font-family:Richard;
@@ -181,6 +200,57 @@ table.tabla1{
 
 table.tabla2{
     top: 60%;
+}
+
+div.edicion ul{
+    list-style-type: none;
+    text-align: center;
+    position: fixed;
+    top: 3%;
+    width: 50%;
+    right: 0;
+    left: 57%;
+}
+
+div.edicion li{
+    display: inline;
+    text-align: center;
+    margin: 0 10px 0 0;
+}
+
+div.edicion li a {
+    padding: 2px 7px 2px 7px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+}
+
+div.edicion a:hover{
+    background-color: #333333;
+}
+
+/* APARTADO AL TERMINAR EL REGISTRO*/
+body.loading{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+div.loader{
+    display: grid;
+    place-items: end;
+    width: 170px;
+    height: 170px;
+    border-radius: 70%;
+    border: 8px solid white;
+    border-top-color: transparent;
+    animation: loader 1.2s linear infinite;
+}
+
+@keyframes loader {
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 
