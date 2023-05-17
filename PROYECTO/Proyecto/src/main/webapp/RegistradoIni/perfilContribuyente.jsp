@@ -9,13 +9,19 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
 
 <%
     Usuarios usu = new Usuarios();
+
+    String usuario = request.getParameter("Usuario");
+    String contraseña = request.getParameter("Contraseña");
+    String datos = ((usu.cargarMisDartosUsuarioContri(usuario,contraseña)).toString());
 %>
-<img src=Recursos/perfillogo.jpg width=20% height=20% >
-<p class=perfil>" + <%((usu.cargarMisDartosUsuarioContri(usuario,contraseña)).toString())%></p>
+
+<p class=perfil><%=datos%></p>
+
 </body>
 </html>

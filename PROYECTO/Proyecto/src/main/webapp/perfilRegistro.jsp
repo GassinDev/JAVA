@@ -24,20 +24,27 @@
     String contraseña = request.getParameter("Contraseña");
 
     if(lucontri.cargarMisDartosUsuarioContri(usuario,contraseña) != null){
-     out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=RegistradoIni/perfilContribuyente.jsp>");
-
+      out.println("<h2 class=tfor>Bienvenido " + usuario + "</h2>");
+     out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=RegistradoIni/perfilContribuyente.jsp>");
     } else if (lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña) != null) {
-      out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=RegistradoIni/perfilSolicitante.jsp>");
-
+      out.println("<h2 class=tfor>Bienvenido " + usuario + "</h2>");
+      out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=RegistradoIni/perfilSolicitante.jsp>");
     } else if(Objects.equals(usuario, "admin") && Objects.equals(contraseña, "Aa1234")){
-      out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=RegistradoIni/perfilAdmin.jsp>");
+      out.println("<h2 class=tfor>Bienvenido Administrador</h2>");
+      out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=RegistradoIni/perfilAdmin.jsp>");
     }else{
       out.println("Este usuario no se encuentra registrado en nuestra web");
-      out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=Formularios/sesion.jsp>");
+      out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=Formularios/sesion.jsp>");
     }
   %>
 </p>
 
+<form name="sesion" method=get action=RegistradoIni/perfilContribuyente.jsp>
+  <input type=hidden name=Usuario value="<%=request.getParameter("Usuario")%>"/>
+  <input type=hidden name=Contraseña value="<%=request.getParameter("Contraseña")%>"/>
+</form>
+
+<script>document.forms["sesion"].submit()</script>
 
 <br/>
 </body>
