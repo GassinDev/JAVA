@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.example.proyecto.Usuarios" %><%--
   Created by IntelliJ IDEA.
   User: juang
   Date: 17/05/2023
@@ -9,9 +9,27 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
-out.println("<img src=Recursos/perfillogo.jpg width=20% height=20% >");
-out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString()) + "</p>");
+<h1 class="titulo">Bienvenido <%= request.getParameter("Usuario")%></h1>
+
+<%
+    Usuarios usu = new Usuarios();
+
+    String usuario = request.getParameter("Usuario");
+    String contraseña = request.getParameter("Contraseña");
+    String datos = ((usu.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString());
+%>
+
+<p class=perfil><%=datos%></p>
+
+<div id="barraNavegacion">
+    <ul>
+        <li><a class=enla href=../FuncionesSolicitantes/VerMisAyudas.jsp>Ver/Editar mis ayudas</a></li>
+        <li><a class=enla href=../FuncionesSolicitantes/FormularioAyuda.jsp>Crear nueva ayuda</a></li>
+    </ul>
+</div>
+
 </body>
 </html>

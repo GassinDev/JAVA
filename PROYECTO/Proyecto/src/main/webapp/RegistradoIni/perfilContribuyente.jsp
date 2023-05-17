@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
+<h1 class="titulo">Bienvenido <%= request.getParameter("Usuario")%></h1>
 
 <%
     Usuarios usu = new Usuarios();
@@ -22,6 +23,13 @@
 %>
 
 <p class=perfil><%=datos%></p>
+
+<div id="barraNavegacion">
+    <ul>
+        <li><a class=enla href=../FuncionesContribuyentes/VerAyudasAceptadas.jsp>Ver ayudas aceptadas</a></li>
+        <li><a class=enla href=../FuncionesContribuyentes/VerAyudasDisponibles.jsp >Ver ayudas disponibles</a></li>
+    </ul>
+</div>
 
 </body>
 </html>

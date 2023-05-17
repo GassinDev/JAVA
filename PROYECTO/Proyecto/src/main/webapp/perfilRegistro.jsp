@@ -22,24 +22,20 @@
 
     String usuario = request.getParameter("Usuario");
     String contraseña = request.getParameter("Contraseña");
+    String jsp = "sesion.jsp";
 
     if(lucontri.cargarMisDartosUsuarioContri(usuario,contraseña) != null){
-      out.println("<h2 class=tfor>Bienvenido " + usuario + "</h2>");
-     out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=RegistradoIni/perfilContribuyente.jsp>");
+      jsp = "perfilContribuyente.jsp";
     } else if (lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña) != null) {
-      out.println("<h2 class=tfor>Bienvenido " + usuario + "</h2>");
-      out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=RegistradoIni/perfilSolicitante.jsp>");
+      jsp = "perfilSolicitante.jsp";
     } else if(Objects.equals(usuario, "admin") && Objects.equals(contraseña, "Aa1234")){
-      out.println("<h2 class=tfor>Bienvenido Administrador</h2>");
-      out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=RegistradoIni/perfilAdmin.jsp>");
-    }else{
-      out.println("Este usuario no se encuentra registrado en nuestra web");
-      out.println("<META HTTP-EQUIV=REFRESH CONTENT=3;URL=Formularios/sesion.jsp>");
+      jsp = "perfilAdmin.jsp";
     }
   %>
+
 </p>
 
-<form name="sesion" method=get action=RegistradoIni/perfilContribuyente.jsp>
+<form name="sesion" method=get action=RegistradoIni/<%=jsp%>>
   <input type=hidden name=Usuario value="<%=request.getParameter("Usuario")%>"/>
   <input type=hidden name=Contraseña value="<%=request.getParameter("Contraseña")%>"/>
 </form>

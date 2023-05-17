@@ -15,7 +15,7 @@
 
 <div id="barraNavegacion">
   <ul>
-    <li><a class="inicio" href="Formularios/sesion.jsp">Inicio de sesión</a></li>
+    <li><a class="inicio" href="RegistradoIni/sesion.jsp">Inicio de sesión</a></li>
     <li><a class="registro" href="Formularios/registro.jsp">Registrarme en la WEB</a></li>
   </ul>
 </div>

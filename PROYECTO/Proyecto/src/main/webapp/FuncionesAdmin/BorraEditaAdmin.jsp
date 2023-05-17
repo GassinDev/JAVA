@@ -22,7 +22,7 @@
 %>
 <div class="edicion">
     <ul>
-        <li><a class="inicio" href="BorraEditaAdmin.jsp">Salir de Edición de Usuarios</a></li>
+        <li><a class="inicio" href="../RegistradoIni/perfilAdmin.jsp">Salir de Edición de Usuarios</a></li>
     </ul>
 </div>
 
