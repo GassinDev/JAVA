@@ -24,16 +24,16 @@
     String contraseña = request.getParameter("Contraseña");
 
     if(lucontri.cargarMisDartosUsuarioContri(usuario,contraseña) != null){
-      out.println("<img src=Recursos/perfillogo.jpg width=20% height=20% >");
-      out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioContri(usuario,contraseña)).toString()) + "</p>");
+     out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=RegistradoIni/perfilContribuyente.jsp>");
+
     } else if (lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña) != null) {
-      out.println("<img src=Recursos/perfillogo.jpg width=20% height=20% >");
-      out.println("<p class=perfil>" + ((lucontri.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString()) + "</p>");
+      out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=RegistradoIni/perfilSolicitante.jsp>");
+
     } else if(Objects.equals(usuario, "admin") && Objects.equals(contraseña, "Aa1234")){
-      out.println("Eres el admin");
-      out.println("<p><a class=enla href=FuncionesAdmin/BorraEditaAdmin.jsp >Editar / Borrar Usuarios</a><br></p>");
+      out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=RegistradoIni/perfilAdmin.jsp>");
     }else{
       out.println("Este usuario no se encuentra registrado en nuestra web");
+      out.println("<META HTTP-EQUIV=REFRESH CONTENT=5;URL=Formularios/sesion.jsp>");
     }
   %>
 </p>
