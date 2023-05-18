@@ -26,8 +26,11 @@
 
 <div id="barraNavegacion">
     <ul>
-        <li><a class=enla href=../FuncionesSolicitantes/VerMisAyudas.jsp>Ver/Editar mis ayudas</a></li>
-        <li><a class=enla href=../FuncionesSolicitantes/FormularioAyuda.jsp>Crear nueva ayuda</a></li>
+        <form name="guardaNombre" method="get" action="../FuncionesSolicitantes/FormularioAyuda.jsp" >
+            <input type="hidden" name="Usuario" value="<%=usuario%>"/></br>
+            <li><a class=enla href=../FuncionesSolicitantes/FormularioAyuda.jsp onclick="guardaNombre.submit()">Crear nueva ayuda</a></li>
+            <li><a class=enla href=../FuncionesSolicitantes/VerMisAyudas.jsp onclick="guardaNombre.submit()">Ver/Editar mis ayudas</a></li>
+        </form>
     </ul>
 </div>
 
