@@ -131,6 +131,18 @@ public class Usuarios {
         return null;
     }
 
+
+    public Contribuyente cargarMisDartosUsuarioContri(String usuario){
+
+        for (Contribuyente c: listaContribuidores){
+            if(Objects.equals(c.getUsuario(), usuario)){
+                return c;
+            }
+        }
+
+        return null;
+    }
+
     public Solicitante cargarMisDartosUsuarioSoli(String usuario, String contraseña){
 
         try {

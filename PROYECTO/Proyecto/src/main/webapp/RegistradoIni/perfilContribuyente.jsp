@@ -6,23 +6,22 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
-<h1 class="titulo">Bienvenido <%= request.getParameter("Usuario")%></h1>
 
+-
 <%
-    Usuarios usu = new Usuarios();
+    ServletContext s = request.getServletContext();
 
-    String usuario = request.getParameter("Usuario");
-    String contraseña = request.getParameter("Contraseña");
-    String datos = ((usu.cargarMisDartosUsuarioContri(usuario,contraseña)).toString());
+    String usuario = (String) s.getAttribute("Usuario");
 %>
+<h1 class="titulo">Bienvenido <%= usuario%> </h1>
 
-<p class=perfil><%=datos%></p>
 
 <div id="barraNavegacion">
     <ul>

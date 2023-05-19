@@ -12,7 +12,7 @@
 </head>
 <body>
 <h2 class="tfor"> INICIO DE SESIÓN</h2>
-<form method="get" action="../perfilRegistro.jsp" class="fde">
+<form method="get" action="perfilRegistro.jsp" class="fde">
   Usuario <input type="text" name="Usuario"/></br>
   Contraseña <input type="password" name="Contraseña"/></br>
   </br> <input type="submit" value="Aceptar" class="boton">

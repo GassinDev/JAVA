@@ -15,14 +15,11 @@
 <h1 class="titulo">Bienvenido <%= request.getParameter("Usuario")%></h1>
 
 <%
-    Usuarios usu = new Usuarios();
+    ServletContext s = request.getServletContext();
 
-    String usuario = request.getParameter("Usuario");
-    String contraseña = request.getParameter("Contraseña");
-    String datos = ((usu.cargarMisDartosUsuarioSoli(usuario,contraseña)).toString());
+    String usuario = (String) s.getAttribute("Usuario");
 %>
-
-<p class=perfil><%=datos%></p>
+<h1 class="titulo">Bienvenido <%= usuario%> </h1>
 
 <div id="barraNavegacion">
     <ul>

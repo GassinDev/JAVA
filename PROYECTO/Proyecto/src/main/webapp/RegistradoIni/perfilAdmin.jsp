@@ -15,8 +15,13 @@
   <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
+<%
+  ServletContext s = request.getServletContext();
 
-<h1 class="titulo">Bienvenido Administrador</h1>
+  String usuario = (String) s.getAttribute("Usuario");
+%>
+
+<h1 class="titulo">Bienvenido <%= usuario%> </h1>
 
 <div class="edicion">
   <ul>

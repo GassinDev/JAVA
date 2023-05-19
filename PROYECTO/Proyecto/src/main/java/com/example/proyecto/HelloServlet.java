@@ -30,7 +30,7 @@ public class HelloServlet extends HttpServlet {
     public static Connection nombradorBD(){
 
         try {
-            Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/juang/Desktop/JAVA/PROYECTO/dbProyect");
+            Connection conexion = DriverManager.getConnection("jdbc:sqlite:C:/Users/Gassin/Desktop/PROG/JAVA/PROYECTO/dbProyect");
             return conexion;
         } catch (SQLException e) {
 
