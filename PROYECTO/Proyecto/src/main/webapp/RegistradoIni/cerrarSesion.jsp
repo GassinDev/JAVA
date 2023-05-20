@@ -4,6 +4,10 @@
     <title>Title</title>
 </head>
 <body>
-
+<%
+  ServletContext sc = request.getServletContext();
+  sc.removeAttribute("Usuario");
+  response.sendRedirect("sesion.jsp");
+%>
 </body>
 </html>

@@ -1,6 +1,5 @@
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
-<%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@ page import="com.example.proyecto.HelloServlet" %>
 <%@ page import="java.util.Objects" %>
@@ -71,7 +70,7 @@
         conexion.close();
     }
 %>
-<script>document.location = "BorraEditaAdmin.jsp"</script>
+<script>document.location = "../BorraEditaAdmin.jsp"</script>
 </body>
 </html>
 

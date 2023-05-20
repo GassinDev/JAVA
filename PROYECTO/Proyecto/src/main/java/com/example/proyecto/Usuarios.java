@@ -114,6 +114,8 @@ public class Usuarios {
 
                         for (Contribuyente c: listaContribuidores){
                             if(Objects.equals(c.getUsuario(), usuario)){
+                                resul.close();
+                                conexion.close();
                                 return c;
                             }
                         }
@@ -157,6 +159,8 @@ public class Usuarios {
 
                         for (Solicitante soli: listaSolicitantes){
                             if(Objects.equals(soli.getUsuario(), usuario)){
+                                resul.close();
+                                conexion.close();
                                 return soli;
                             }
                         }

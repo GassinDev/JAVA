@@ -1,33 +1,22 @@
-<%@ page import="com.example.proyecto.Usuarios" %><%--
-  Created by IntelliJ IDEA.
-  User: juang
-  Date: 17/05/2023
-  Time: 9:34
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
-<h1 class="titulo">Bienvenido <%= request.getParameter("Usuario")%></h1>
-
 <%
-    ServletContext s = request.getServletContext();
+    ServletContext sc = request.getServletContext();
 
-    String usuario = (String) s.getAttribute("Usuario");
+    String usuario = (String) sc.getAttribute("Usuario");
 %>
 <h1 class="titulo">Bienvenido <%= usuario%> </h1>
 
 <div id="barraNavegacion">
     <ul>
-        <form name="guardaNombre" method="get" action="../FuncionesSolicitantes/FormularioAyuda.jsp" >
-            <input type="hidden" name="Usuario" value="<%=usuario%>"/></br>
-            <li><a class=enla href=../FuncionesSolicitantes/FormularioAyuda.jsp onclick="guardaNombre.submit()">Crear nueva ayuda</a></li>
-            <li><a class=enla href=../FuncionesSolicitantes/VerMisAyudas.jsp onclick="guardaNombre.submit()">Ver/Editar mis ayudas</a></li>
-        </form>
+        <li><a class=enla href=../FuncionesSolicitantes/FormularioAyuda.jsp>Crear nueva ayuda</a></li>
+        <li><a class=enla href=../FuncionesSolicitantes/VerMisAyudas.jsp>Ver/Editar mis ayudas</a></li>
+        <li><a class=enla href=../RegistradoIni/cerrarSesion.jsp >Cerrar sesión</a></li>
     </ul>
 </div>
 

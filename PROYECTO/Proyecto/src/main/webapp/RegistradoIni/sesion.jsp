@@ -1,8 +1,3 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -12,6 +7,11 @@
 </head>
 <body>
 <h2 class="tfor"> INICIO DE SESIÓN</h2>
+<div class="edicion">
+  <ul>
+    <li><a class=enla href=../index.jsp >Atrás</a></li>
+  </ul>
+</div>
 <form method="get" action="perfilRegistro.jsp" class="fde">
   Usuario <input type="text" name="Usuario"/></br>
   Contraseña <input type="password" name="Contraseña"/></br>

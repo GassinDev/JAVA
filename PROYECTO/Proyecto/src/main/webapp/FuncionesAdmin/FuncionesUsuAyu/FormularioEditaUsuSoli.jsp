@@ -1,14 +1,9 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
   <title>EDICIÓN DE USUARIOS</title>
-  <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
+  <link rel="stylesheet" type="text/css" href="../../CSS/menu.css">
   <h2 class="tfor2"> EDITOR DE SOLICITANTE - <%=request.getParameter("Usuario")%></h2>
 </head>
 <body>

@@ -1,11 +1,3 @@
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.Connection"%>
-<%@ page import="com.example.proyecto.HelloServlet" %>
-<%@ page import="com.example.proyecto.Usuarios" %>
-<%@ page import="com.example.proyecto.Contribuyente" %>
-<%@ page import="java.util.Objects" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
@@ -16,16 +8,19 @@
 </head>
 <body>
 <%
-  ServletContext s = request.getServletContext();
+  ServletContext sc = request.getServletContext();
 
-  String usuario = (String) s.getAttribute("Usuario");
+  String usuario = (String) sc.getAttribute("Usuario");
 %>
+
 
 <h1 class="titulo">Bienvenido <%= usuario%> </h1>
 
 <div class="edicion">
   <ul>
+    <li><a class=enla href=../FuncionesAdmin/BorraEditaAyudas.jsp>Editar / Borrar Ayudas</a></li>
     <li><a class=enla href=../FuncionesAdmin/BorraEditaAdmin.jsp >Editar / Borrar Usuarios</a></li>
+    <li><a class=enla href=../RegistradoIni/cerrarSesion.jsp >Cerrar sesión</a></li>
   </ul>
 </div>
 
