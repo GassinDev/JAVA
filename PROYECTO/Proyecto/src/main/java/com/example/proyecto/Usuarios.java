@@ -213,4 +213,9 @@ public class Usuarios {
         return null;
     }
 
+    public static String Cayo(String usuario){
+
+        return usuario;
+    }
+    
 }
