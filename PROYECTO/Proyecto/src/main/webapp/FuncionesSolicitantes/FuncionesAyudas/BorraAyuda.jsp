@@ -9,6 +9,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
+
+<!-- EJECUTAMOS UNA QUERY PARA BORRAR LA AYUDA DESEADA -->
+
 <%
 
     Statement s = HelloServlet.conectarBD();

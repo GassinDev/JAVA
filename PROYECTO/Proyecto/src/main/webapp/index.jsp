@@ -6,6 +6,9 @@
   <link rel="stylesheet" type="text/css" href="CSS/menu.css">
 </head>
 <body id="contenedor">
+
+<!-- PAGINA DE INICIO -->
+
 <h1 class="titulo"><img class="logo" src="Recursos/Imagenes/logo.png">SOLICITENOS</h1>
 
 <div id="barraNavegacion">
@@ -14,6 +17,7 @@
     <li><a class="registro" href="Formularios/registro.jsp">Registrarme en la WEB</a></li>
   </ul>
 </div>
+
 <div class="divglo">
   <div class="div1">
     <section>
@@ -23,6 +27,7 @@
       <img src="Recursos/Imagenes/persona4.png">
     </section>
   </div>
+
   <div class="div2">
     <article class="info">
       <h2 class="titulosPa"><span>Solicita tus ayudas en Solicitenos</span> </h2>
@@ -40,5 +45,6 @@
     </article>
   </div>
 </div>
+
 </body>
 </html>

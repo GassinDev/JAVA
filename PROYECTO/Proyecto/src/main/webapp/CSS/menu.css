@@ -167,7 +167,11 @@ input.boton{
     color:indianred;
     background:ghostwhite;
 }
-
+textarea{
+    height: 120px;
+    width: 520px;
+    font-size: 20px;
+}
 select{
     margin-bottom: 17px;
 }
@@ -192,19 +196,23 @@ input.boton2{
 
 table{
     font-size: 20px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%);
+    position: relative;
+    margin: 0 auto;
+    background-color: darkgreen;
+    border: white;
 }
+
 caption{
     font-size: 25px;
 }
 table.tabla1{
-    top: 20%;
+    margin-top: 5%;
+    padding: 10px;
 }
 
 table.tabla2{
-    top: 60%;
+    padding: 10px;
+    margin-top: 3%;
 }
 
 div.edicion ul{
@@ -258,6 +266,57 @@ div.loader{
     }
 }
 
+
+/*DATOS DE LOS USUARIOS*/
+
+article.effe{
+    position: relative;
+    width: 250px;
+    transition: all .3s ease;
+}
+
+article.effe img{
+    box-shadow: 0 60px 60px -60px rgba(0, 30,255,0.5);
+    border-radius: 4px;
+    object-fit: cover;
+    width: 320%;
+}
+
+article.effe p.fusi{
+    position: absolute;
+    width: 400px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translate(25%);
+    transition: .3s ease;
+    opacity: 0;
+}
+
+article.effe:hover{
+    transform: perspective(250px) translateY(-5%) translateZ(0);
+}
+
+article.effe:before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 70%;
+    width: 320%;
+    background-image: linear-gradient(to bottom,transparent 10%,rgba(0,0,0,0.5)50%,rgba(0,0,0)95%);
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+article.effe:hover::before{
+    opacity: 1;
+}
+
+article.effe:hover p.fusi{
+    opacity: 1;
+    transform: translateY(2%) translateX(1%);
+}
 
 
 

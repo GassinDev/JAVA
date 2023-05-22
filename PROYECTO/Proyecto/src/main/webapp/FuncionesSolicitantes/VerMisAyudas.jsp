@@ -11,6 +11,9 @@
 </head>
 <body id="contenedor">
 
+<!-- EJECUTAMOS UNAS QUERYS PARA SABER CUALES SON LAS AYUDAS DE UN USUARIO EN ESPECIFICO Y LAS METEMOS EN DOS TABLA PARA
+ MOSTRALO POR PANTALLA -->
+
 <%
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();

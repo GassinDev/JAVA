@@ -6,6 +6,9 @@
   <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
+
+<!-- FORMULARIO DE INICIO DE SESION -->
+
 <h2 class="tfor"> INICIO DE SESIÓN</h2>
 <div class="edicion">
   <ul>

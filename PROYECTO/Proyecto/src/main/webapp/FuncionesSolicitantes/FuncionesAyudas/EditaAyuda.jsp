@@ -11,6 +11,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
+
+<!-- LA PRIMERA QUERY GUARDA LOS DATOS ANTIGUOS PARA USARLOS EN LOS FILTROS Y LA SIGUIENTE QUERY METE LOS NUEVOS DATOS
+CON AYUDA DE LOS DATOS DE LOS INPUT GUARDADOS EN LAS VARIABLES -->
 <%
 
     Statement s = HelloServlet.conectarBD();

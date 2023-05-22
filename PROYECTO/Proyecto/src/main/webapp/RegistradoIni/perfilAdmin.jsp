@@ -7,6 +7,9 @@
   <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
+
+<!-- BASICAMENTE ES UNA BIENVENIDA CON TRES ACCIONES MEDIANTE ENLACES -->
+
 <%
   ServletContext sc = request.getServletContext();
 

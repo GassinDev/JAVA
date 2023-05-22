@@ -26,6 +26,7 @@
     if(us.compruebaUsuarioContri(usuario)){
         s.executeUpdate("DELETE FROM Contribuyentes WHERE Usuario ='" + usuario + "'");
         s.executeUpdate("DELETE FROM Usuarios WHERE Usuario ='" + usuario + "'");
+        s.executeUpdate("UPDATE Ayudas SET Contribuyente='',FechaFin='',Disponibilidad='Disponible' WHERE Contribuyente='" + usuario + "'");
     }else {
         s.executeUpdate("DELETE FROM Solicitantes WHERE Usuario ='" + usuario + "'");
         s.executeUpdate("DELETE FROM Usuarios WHERE Usuario ='" + usuario + "'");

@@ -11,6 +11,8 @@
 </head>
 <body id="contenedor">
 
+<!-- SE EJECUTA UNA QUERY PARA OBTENER LAS AYUDAS Y LUEGO INTRODUCIRLAS EN UNA TABLA-->
+
 <%
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();
@@ -41,7 +43,7 @@
     %>
     <td>
         <form method="get" action="FuncionesContriAyudas/CancelaAyuda.jsp">
-            <input type="hidden" name="Id" value="<%=listado.getString("Id") %>"/>
+            <input type="hidden" name="Id" value="<%=listado.getString("Id")%>"/>
             <input type="submit" value="Cancelar" class="boton2">
         </form>
     </td></tr>

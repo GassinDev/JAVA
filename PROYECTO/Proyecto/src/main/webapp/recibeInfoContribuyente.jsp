@@ -11,6 +11,9 @@
   <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=index.jsp">
 </head>
 <body class="loading">
+
+<!-- PILLAMOS LOS DATOS DEL FORMULARIO LOS METEMOS EN QUERYS Y LAS EJECUTAMOS PARA CREAR USUARIOS -->
+
 <%
   Statement s = HelloServlet.conectarBD();
   Connection conexion = HelloServlet.nombradorBD();

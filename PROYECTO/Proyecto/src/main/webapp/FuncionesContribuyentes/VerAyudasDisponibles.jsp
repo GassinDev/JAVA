@@ -11,6 +11,8 @@
 </head>
 <body id="contenedor">
 
+<!-- SE EJECUTA UNA QUERY PARA OBTENER LAS AYUDAS Y LUEGO INTRODUCIRLAS EN UNA TABLA-->
+
 <%
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();

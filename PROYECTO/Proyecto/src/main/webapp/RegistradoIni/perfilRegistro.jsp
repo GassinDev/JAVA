@@ -10,6 +10,8 @@
 </head>
 <body>
 
+<!-- GUARDAMOS LOS DATOS DE LOS INPUTS PARA METERLOS EN FILTROS PARA SABER A QUE PERFIL MANDAR AL USUARIO -->
+
 <%
   Usuarios lucontri = new Usuarios();
 
@@ -29,7 +31,6 @@
     response.sendRedirect("perfilAdmin.jsp");
   }else{
     response.sendRedirect("sesion.jsp");
-
   }
 %>
 

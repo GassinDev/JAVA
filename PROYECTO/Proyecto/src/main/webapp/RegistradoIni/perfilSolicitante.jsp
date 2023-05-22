@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="../CSS/menu.css">
 </head>
 <body>
+
+<!-- BIENVENIDA DEL USUARIO CON UNA FUNCION PARA CONSEGUIR LOS DATOS DE SU PERFIL Y TRES ACCION MEDIANTE ENLACE -->
 <%
     Usuarios usu = new Usuarios();
 
@@ -14,9 +16,13 @@
 
     String datos = String.valueOf(usu.datosSolicitantes(usuario));
 %>
+
 <h1 class="titulo">Bienvenido <%= usuario%> </h1>
 
-<p class="perfil"><%=datos%></p>
+<article class="effe">
+    <img src="../Recursos/Imagenes/perfillogo.jpg">
+    <p class="fusi"><%=datos%></p>
+</article>
 
 <div id="barraNavegacion">
     <ul>

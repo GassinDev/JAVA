@@ -13,9 +13,13 @@
     <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=../RegistradoIni/perfilSolicitante.jsp">
 </head>
 <body class="loading">
+
+<!-- EJECUTAMOS UNA QUERY PARA SABER LAS ID EXISTENTES Y CON UNA FUNCION VAMOS GENERANDO UNA ID INEXISTENTE Y LUEGO UNA
+QUERY PARA AÑADIR LA NUEVA AYUDA-->
 <%
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();
+
     ServletContext sc = request.getServletContext();
 
     String usuario = (String) sc.getAttribute("Usuario");
