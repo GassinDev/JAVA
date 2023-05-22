@@ -7,15 +7,13 @@ public class Solicitante {
     String nombre;
     String apellidos;
     int telefono;
-    String ayuda;
 
     //CONSTRUCTOR
-    public Solicitante(String usuario, String nombre, String apellidos, int telefono, String ayuda) {
+    public Solicitante(String usuario, String nombre, String apellidos, int telefono) {
         this.usuario = usuario;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.telefono = telefono;
-        this.ayuda = ayuda;
     }
 
     public Solicitante() {
@@ -40,15 +38,11 @@ public class Solicitante {
         return telefono;
     }
 
-    public String getAyuda() {
-        return ayuda;
-    }
 
     @Override
     public String toString() {
         return "<br>" + "Nombre: " + nombre + "<br>" +
                 "Apellidos: " + apellidos + "<br>" +
-                "Teléfono: " + telefono + "<br>" +
-                "Especialidades: " + ayuda;
+                "Teléfono: " + telefono;
     }
 }

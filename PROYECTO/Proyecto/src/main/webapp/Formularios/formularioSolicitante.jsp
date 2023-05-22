@@ -8,17 +8,19 @@
 </head>
 <body>
 
+<!-- FORMULARIO PARA PODER REGISTRARTE COMO SOLICITANTE -->
+
 <form method="get" action="../recibeInfoSolicitantes.jsp" class="fde">
-  Nombre    <input type="text" name="Nombre"/></br>
-  Apellidos <input type="text" name="Apellidos"/></br>
+  Nombre*    <input type="text" name="Nombre"/></br>
+  Apellidos* <input type="text" name="Apellidos"/></br>
   Teléfono  <input type="tel" name="Telefono"/></br>
-  Ayuda <input type="text" name="Ayuda"/></br>
-  Usuario <input type="text" name="Usuario"/></br>
-  Contraseña <input type="password" name="Contraseña"/></br>
+  Usuario* <input type="text" name="Usuario"/></br>
+  Contraseña* <input type="password" name="Contraseña"/></br>
   </br><input type="submit" value="Aceptar" class="boton">
 </form>
 
-<br/>
+<p class="campos">Los campos con un * son obligatorios</p>
 
+<br/>
 </body>
 </html>

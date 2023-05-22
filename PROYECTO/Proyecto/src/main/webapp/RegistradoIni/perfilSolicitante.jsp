@@ -1,3 +1,4 @@
+<%@ page import="com.example.proyecto.Usuarios" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <html>
 <head>
@@ -6,11 +7,16 @@
 </head>
 <body>
 <%
-    ServletContext sc = request.getServletContext();
+    Usuarios usu = new Usuarios();
 
+    ServletContext sc = request.getServletContext();
     String usuario = (String) sc.getAttribute("Usuario");
+
+    String datos = String.valueOf(usu.datosSolicitantes(usuario));
 %>
 <h1 class="titulo">Bienvenido <%= usuario%> </h1>
+
+<p class="perfil"><%=datos%></p>
 
 <div id="barraNavegacion">
     <ul>

@@ -11,6 +11,8 @@
 <body>
 <%
 
+  /* EJECUTAMOS UNA QUERY PARA EDITAR AYUDAS DE MANERA QUE SE QUEDARIA DISPONIBLE*/
+
   Statement s = HelloServlet.conectarBD();
   Connection conexion = HelloServlet.nombradorBD();
 

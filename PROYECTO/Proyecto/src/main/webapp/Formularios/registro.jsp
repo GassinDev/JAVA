@@ -8,8 +8,11 @@
 </head>
 <body>
 
+
 <div class="opcion">
     <h2 class="tfor">ELIJE COMO QUIERES REGISTRARTE</h2>
+
+    <!-- CON ESTE FORMULARIO QUE GUARDA UN SELECT NOS ELIJE EN EL IF A QUE TIPO DE FORMULARIO TE ENVIARÁ-->
 
     <form method="get" action="registro.jsp" class="fde">
         <select name="tipo">

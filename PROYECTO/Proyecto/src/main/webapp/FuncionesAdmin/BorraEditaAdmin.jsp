@@ -11,6 +11,8 @@
 </head>
 <body id="contenedor">
 
+<!-- AQUI GUARDAMOS LOS RESULTADOS DE DOS QUERYS Y CON SUS DATOS RELLENAMOS DOS TABLAS -->
+
 <%
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();
@@ -58,14 +60,13 @@
 </table>
 <table border="1" class="tabla2">
     <caption>Lista de los Solicitantes</caption>
-    <tr><th>Usuario</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Ayuda</th></tr>
+    <tr><th>Usuario</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th></tr>
     <%
         while (listado2.next()) {
             out.println("<td>" + listado2.getString("Usuario") + "</td>");
             out.println("<td>" + listado2.getString("Nombre") + "</td>");
             out.println("<td>" + listado2.getString("Apellidos") + "</td>");
             out.println("<td>" + listado2.getString("Telefono") + "</td>");
-            out.println("<td>" + listado2.getString("Ayuda") + "</td>");
     %>
     <td>
         <form method="get" action="FuncionesUsuAyu/BorraUsu.jsp">

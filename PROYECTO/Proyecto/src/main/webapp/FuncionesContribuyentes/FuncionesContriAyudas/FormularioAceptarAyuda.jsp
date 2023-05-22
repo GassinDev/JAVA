@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<!-- FORMULARIO PARA AÑADIR UNA FECHA FINAL A UNA AYUDA -->
+
 <form method="get" action="AceptarAyudas.jsp" class="fde">
   Fecha Final<input type="date" name="FechaFin"/></br>
   <input type="hidden" name="Id" value="<%=request.getParameter("Id")%>"/></br>

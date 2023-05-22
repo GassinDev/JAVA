@@ -1,6 +1,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@ page import="com.example.proyecto.HelloServlet" %>
+<%@ page import="com.example.proyecto.Usuarios" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -11,12 +12,25 @@
 <body>
 <%
 
+    /*AQUI TENEMOS LA CREACION DE UN OBJETO USUARIOS DONDE SE GENERAN LAS DOS LISTAS Y LUEGO CON UNAS FUNCIONES
+    * EN LOS IF COMPROBAMOS SI EL USUARIO QUE VAMOS A BORRAR  ES UN CONTRIBUYENTE O UN SOLICITANTE, Y CON
+    * QUERY LO BORRAMOS*/
+
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();
 
-    s.executeUpdate("DELETE FROM Contribuyentes WHERE Usuario ='" + request.getParameter("Usuario") + "'");
-    s.executeUpdate("DELETE FROM Solicitantes WHERE Usuario ='" + request.getParameter("Usuario") + "'");
-    s.executeUpdate("DELETE FROM Usuarios WHERE Usuario ='" + request.getParameter("Usuario") + "'");
+    String usuario = request.getParameter("Usuario");
+
+    Usuarios us = new Usuarios();
+
+    if(us.compruebaUsuarioContri(usuario)){
+        s.executeUpdate("DELETE FROM Contribuyentes WHERE Usuario ='" + usuario + "'");
+        s.executeUpdate("DELETE FROM Usuarios WHERE Usuario ='" + usuario + "'");
+    }else {
+        s.executeUpdate("DELETE FROM Solicitantes WHERE Usuario ='" + usuario + "'");
+        s.executeUpdate("DELETE FROM Usuarios WHERE Usuario ='" + usuario + "'");
+        s.executeUpdate("DELETE FROM Ayudas WHERE Solicitante='" + usuario + "'");
+    }
 
     response.sendRedirect("../BorraEditaAdmin.jsp");
 %>

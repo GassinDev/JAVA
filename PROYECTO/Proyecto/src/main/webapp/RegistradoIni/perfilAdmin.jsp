@@ -16,7 +16,7 @@
 
 <h1 class="titulo">Bienvenido <%= usuario%> </h1>
 
-<div class="edicion">
+<div id="barraNavegacion" class="edicion">
   <ul>
     <li><a class=enla href=../FuncionesAdmin/BorraEditaAyudas.jsp>Editar / Borrar Ayudas</a></li>
     <li><a class=enla href=../FuncionesAdmin/BorraEditaAdmin.jsp >Editar / Borrar Usuarios</a></li>

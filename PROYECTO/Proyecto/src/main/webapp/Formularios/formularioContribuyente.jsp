@@ -8,15 +8,19 @@
 </head>
 <body>
 
+<!-- FORMULARIO PARA PODER REGISTRARTE COMO CONTRIBUYENTE -->
+
 <form method="get" action="../recibeInfoContribuyente.jsp" class="fde">
-  Nombre    <input type="text" name="Nombre"/></br>
-  Apellidos <input type="text" name="Apellidos"/></br>
+  Nombre*    <input type="text" name="Nombre" required/></br>
+  Apellidos* <input type="text" name="Apellidos" required/></br>
   Teléfono  <input type="tel" name="Telefono"/></br>
-  Especialidad <input type="text" name="Especialidad"/></br>
-  Usuario <input type="text" name="Usuario"/></br>
-  Contraseña <input type="password" name="Contraseña"/></br>
+  Especialidad* <input type="text" name="Especialidad" required/></br>
+  Usuario* <input type="text" name="Usuario" required/></br>
+  Contraseña* <input type="password" name="Contraseña" required/></br>
   </br><input type="submit" value="Aceptar" class="boton">
 </form>
+
+<p class="campos">Los campos con un * son obligatorios</p>
 
 <br/>
 </body>

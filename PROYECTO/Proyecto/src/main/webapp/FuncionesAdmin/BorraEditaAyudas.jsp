@@ -11,6 +11,8 @@
 </head>
 <body id="contenedor">
 
+<!-- AQUI GUARDAMOS LOS RESULTADOS DE UNA QUERY Y CON SUS DATOS RELLENAMOS UNA TABLA -->
+
 <%
   Statement s = HelloServlet.conectarBD();
   Connection conexion = HelloServlet.nombradorBD();

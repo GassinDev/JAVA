@@ -13,7 +13,8 @@
 </head>
 <body>
 <%
-
+    /*GUARDAMOS LOS DATOS DE LOS INPUTS EN VARIABLES, LAS VARIABLES LAS PASAMOS POR UN FILTRO Y LUEGO AL FINAL LAS METEMOS
+     * EN UNA QUERY QUE ACTUALICE LOS DATOS ANTIGUOS*/
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();
     String nuevoNombre = request.getParameter("Nombre");
@@ -23,7 +24,7 @@
 
     Usuarios usu = new Usuarios();
 
-    if(usu.BuscaUsuarios(request.getParameter("Usuario"))){
+    if(usu.compruebaUsuarioContri(request.getParameter("Usuario"))){
 
         ResultSet listado = s.executeQuery("SELECT * FROM Contribuyentes WHERE Usuario ='" + request.getParameter("Usuario") + "'");
 
@@ -58,13 +59,9 @@
         if(Objects.equals(request.getParameter("Telefono"), "")){
             nuevoTelefono = listado2.getString("Telefono");
         }
-        if(Objects.equals(request.getParameter("Ayuda"), "")){
-            nuevaEspecialidad = listado2.getString("Ayuda");
-        }
         s.executeUpdate("UPDATE Solicitantes SET Nombre='" + nuevoNombre
                 + "',Apellidos='" + nuevoApellidos + "',Telefono='" + nuevoTelefono
-                + "',Ayuda='" + nuevaEspecialidad + "' WHERE Usuario='"
-                + request.getParameter("Usuario") + "'");
+                + "' WHERE Usuario='" + request.getParameter("Usuario") + "'");
 
         listado2.close();
         conexion.close();

@@ -27,6 +27,7 @@ public class HelloServlet extends HttpServlet {
         out.println("</body></html>");
     }
 
+    //AQUI TENEMOS UNA FUNCION LA CUAL OBTENEMOS UNA CONEXION Y LA DEVOLVEMOS PARA PODER USARLA EN LA SIGUIENTE FUNCION
     public static Connection nombradorBD(){
 
         try {
@@ -37,6 +38,9 @@ public class HelloServlet extends HttpServlet {
         }
         return null;
     }
+
+    //EN ESTA TENEMOS QUE USAMOS LA DE ARRIBA IGUALANDOLA A UN CONNECTION PARA PODER CREAR LA CONEXION CON LA BASE DE DATOS, BASICAMENTE LAS
+    //DOS SE COMPLEMENTAN PARA CONSEGUIR LA CONEXION A LA BASE DE DATOS Y USARLAS EN LOS JSP QUE QUERAMOS
     public static Statement conectarBD(){
         try{
             Class.forName("org.sqlite.JDBC");

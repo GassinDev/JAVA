@@ -10,7 +10,7 @@
 </head>
 <body>
 <%
-
+    //UNA SIMPLE EJECUCION DE UNA QUERY LA CUÁL ELIMINA UNA AYUDA ESPECIFICA
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();
 

@@ -8,11 +8,12 @@
 </head>
 <body>
 
+<!-- FORMULARIO PARA EDITAR USUARIOS SOLICITANTES-->
+
 <form method="get" action="EditaUsu.jsp" class="fde">
   Nuevo Nombre    <input type="text" name="Nombre"/></br>
   Nuevos Apellidos <input type="text" name="Apellidos"/></br>
   Nuevo Teléfono  <input type="tel" name="Telefono"/></br>
-  Nueva Ayuda <input type="text" name="Ayuda"/></br>
   <input type="hidden" name="Usuario" value="<%=request.getParameter("Usuario")%>"/></br>
   </br><input type="submit" value="Aceptar" class="boton">
 </form>

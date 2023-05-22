@@ -17,7 +17,8 @@ public class Usuarios {
     ArrayList<Contribuyente> listaContribuidores;
     ArrayList<Solicitante> listaSolicitantes;
 
-    //CONSTRUCTOR
+    //CONSTRUCTOR - EL SIGUIENTE CONSTRUCTOR INICIA DOS LISTAS Y INTRODUCE OBJETOS EN CADA UNA DE ELLAS SEGUN
+    //LOS CRITERIOS DE ESTOS
     public Usuarios() {
         Statement s = HelloServlet.conectarBD();
         Connection conexion = HelloServlet.nombradorBD();
@@ -28,6 +29,10 @@ public class Usuarios {
     }
 
     //METODO
+
+    //LA SIGUIENTE FUNCION LEE CON DOS QUERY LAS LISTAS DE CONTRIBUYENTES Y  DE SOLICITANTES, Y RECOJE POR PARTES SUS
+    //VALORES Y LOS INTRODUCE EN VARIBALES QUE ESTAS SON AÑADIDAS EN CONTRUCTORES, QUE GENERAN UN OBJETO Y ESTE SE
+    //INTRODUCE EN UNA LISTA.
     public void leeUsuarios(Statement s, Connection conexion){
 
         try {
@@ -60,9 +65,8 @@ public class Usuarios {
                     String nombre = resul2.getString("Nombre");
                     String apellidos = resul2.getString("Apellidos");
                     int telefono = resul2.getInt("Telefono");
-                    String ayuda = resul2.getString("Ayuda");
 
-                    listaSolicitantes.add(new Solicitante(usuario,nombre,apellidos,telefono,ayuda));
+                    listaSolicitantes.add(new Solicitante(usuario,nombre,apellidos,telefono));
 
                 }
             }
@@ -78,6 +82,7 @@ public class Usuarios {
         }
     }
 
+    //FUNCIONES BASICA QUE LEEMOS UNA LISTA Y LA GUARDAMOS EN UN STRING, PARA PODER VERLA SI QUEREMOS POR PANTALLA
     public String listarDatosContributentes(){
 
         String s = "";
@@ -100,6 +105,11 @@ public class Usuarios {
         return s;
     }
 
+    /*FUNCION EN LA CUÁL EJECUTAMOS UNA QUERY Y GUARDAMOS EL RESULTADO OBTENIDO, PARA PODER LEERLO CON UN WHILE Y
+    * PODER ENCONTRAR EN LA TABLA USUARIOS UN USUARIO Y CONTRASEÑA QUE COINCIDAN CON LOS INTRODUCIDOS POR EL USUARIO,
+    * CUANDO YA HEMOS COMPROBADO QUE SI EXISTE PASARIAMOS A UN FOR QUE LEE LA LISTA DE CONTRIBUYENTES Y ESTE SI
+    * ENCUENTRA UN USUARIO CON EL MISMO USUARIO QUE HA SIDO INTORDUCIDO, DEVOLVERIA ESE OBJETO, EN EL CASO DE QUE NO,
+    *  DEVOLVERIA NULL*/
     public Contribuyente cargarMisDartosUsuarioContri(String usuario, String contraseña){
 
         try {
@@ -133,18 +143,20 @@ public class Usuarios {
         return null;
     }
 
-
-    public Contribuyente cargarMisDartosUsuarioContri(String usuario){
+    /*ES UNA VERSION MENOS ESPECIFICA DE LA FUNCION DE ARRIBA PERO ESTA DEVOLVERIA TRUE/FALSE, MUY UTIL PARA USARLOS
+    * EN LOS IF PARA FILTRAR CONTRIBUYENTES DE SOLICITANTES*/
+    public Boolean compruebaUsuarioContri(String usuario){
 
         for (Contribuyente c: listaContribuidores){
             if(Objects.equals(c.getUsuario(), usuario)){
-                return c;
+                return true;
             }
         }
 
-        return null;
+        return false;
     }
 
+    //EXACTAMENTE IGUAL QUE LA FUNCION DE CARGARMISDATOSCONTRI PERO ESTA SERÍA PARA LOS SOLICITANTES
     public Solicitante cargarMisDartosUsuarioSoli(String usuario, String contraseña){
 
         try {
@@ -178,29 +190,27 @@ public class Usuarios {
         return null;
     }
 
-    public void borraUsuarios(String usuario){
-        for(Contribuyente c : listaContribuidores){
-            if(Objects.equals(usuario, c.getUsuario())){
-                listaContribuidores.remove(c);
+    //FUNCIONES PARA SACAR MEDIANTE UN FOR QUE LEE LA LISTA LOS DATOS DE LOS USUARIOS DEVOLVIENDO EL OBJETO NECESARIO
+    public Contribuyente datosContribuyente(String usuario){
+
+        for(Contribuyente c:listaContribuidores){
+            if(Objects.equals(c.getUsuario(), usuario)){
+                return c;
             }
         }
 
-        for(Solicitante s : listaSolicitantes){
-            if(Objects.equals(usuario, s.getUsuario())){
-                listaSolicitantes.remove(s);
-            }
-        }
+        return null;
     }
 
-    public boolean BuscaUsuarios(String usuario){
+    public Solicitante datosSolicitantes(String usuario){
 
-        boolean hayUsu = false;
-
-        for(Contribuyente c: listaContribuidores){
-            if(Objects.equals(usuario, c.getUsuario())){
-                hayUsu = true;
+        for(Solicitante s:listaSolicitantes){
+            if(Objects.equals(s.getUsuario(), usuario)){
+                return s;
             }
         }
-        return hayUsu;
+
+        return null;
     }
+
 }

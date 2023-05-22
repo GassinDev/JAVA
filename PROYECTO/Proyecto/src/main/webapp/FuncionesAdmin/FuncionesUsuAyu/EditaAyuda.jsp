@@ -12,6 +12,8 @@
 </head>
 <body>
 <%
+    /*GUARDAMOS LOS DATOS DE LOS INPUTS EN VARIABLES, LAS VARIABLES LAS PASAMOS POR UN FILTRO Y LUEGO AL FINAL LAS METEMOS
+    * EN UNA QUERY QUE ACTUALICE LOS DATOS ANTIGUOS*/
 
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();

@@ -10,6 +10,7 @@
 </head>
 <body>
 <%
+    /* EJECUTAMOS UNA QUERY PARA EDITAR AYUDAS DE MANERA QUE SE QUEDARIA OCUPADA*/
 
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();

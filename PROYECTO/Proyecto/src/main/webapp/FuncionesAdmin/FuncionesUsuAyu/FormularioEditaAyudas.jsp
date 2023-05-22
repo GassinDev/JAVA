@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<!-- FORMULARIO PARA EDITAR AYUDAS -->
+
 <form method="get" action="EditaAyuda.jsp" class="fde">
   Nueva Ayuda <input type="text" name="Ayuda"/></br>
   Nuevo Comentario <input type="text" name="Comentario"/></br>

@@ -28,6 +28,7 @@
     sc.setAttribute("Usuario", usuario);
     response.sendRedirect("perfilAdmin.jsp");
   }else{
+    response.sendRedirect("sesion.jsp");
 
   }
 %>

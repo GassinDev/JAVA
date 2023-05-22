@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<!-- FORMULARIO PARA EDITAR USUARIOS CONTRIBUYENTES-->
+
 <form method="get" action="EditaUsu.jsp" class="fde">
   Nuevo Nombre    <input type="text" name="Nombre"/></br>
   Nuevos Apellidos <input type="text" name="Apellidos"/></br>
