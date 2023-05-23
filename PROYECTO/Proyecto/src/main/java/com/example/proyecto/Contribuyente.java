@@ -18,10 +18,6 @@ public class Contribuyente {
         this.especialidad = especialidad;
     }
 
-    public Contribuyente(){
-
-    }
-
     //METODOS
     public String getUsuario() { return usuario; }
 

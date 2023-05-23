@@ -28,7 +28,7 @@
 
 <table border="1" class="tabla1">
     <caption>Lista de los Contribuyentes</caption>
-    <tr><th>Usuario</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Especialidad</th><th></th></tr>
+    <tr><th>Usuario</th><th>Nombre</th><th>Apellidos</th><th>Telefono</th><th>Especialidad</th></tr>
     <%
         while (listado.next()) {
             out.println("<td>" + listado.getString("Usuario") + "</td>");

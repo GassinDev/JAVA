@@ -11,7 +11,6 @@
 <!-- FORMULARIO PARA PODER REGISTRARTE COMO SOLICITANTE -->
 
 <form method="get" action="../recibeInfoSolicitantes.jsp" class="fde">
-<form method="get" action="../recibeInfoSolicitantes.jsp" class="fde">
   Nombre*    <input type="text" name="Nombre" required/></br>
   Apellidos* <input type="text" name="Apellidos" required/></br>
   Teléfono  <input type="tel" name="Telefono"/></br>

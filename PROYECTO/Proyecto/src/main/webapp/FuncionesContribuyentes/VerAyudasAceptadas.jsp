@@ -27,7 +27,7 @@
     <ul>
         <li><a class="inicio" href="../RegistradoIni/perfilContribuyente.jsp">Salir de Mis Ayudas Aceptadas</a></li>
     </ul>
-</div>//
+</div>
 
 <table border="1" class="tabla1">
     <caption>Lista de Mis Ayudas Aceptadas</caption>

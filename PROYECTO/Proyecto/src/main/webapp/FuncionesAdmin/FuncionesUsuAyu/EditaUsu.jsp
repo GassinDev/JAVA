@@ -15,8 +15,10 @@
 <%
     /*GUARDAMOS LOS DATOS DE LOS INPUTS EN VARIABLES, LAS VARIABLES LAS PASAMOS POR UN FILTRO Y LUEGO AL FINAL LAS METEMOS
      * EN UNA QUERY QUE ACTUALICE LOS DATOS ANTIGUOS*/
+
     Statement s = HelloServlet.conectarBD();
     Connection conexion = HelloServlet.nombradorBD();
+
     String nuevoNombre = request.getParameter("Nombre");
     String nuevoApellidos = request.getParameter("Apellidos");
     String nuevoTelefono = request.getParameter("Telefono");
@@ -40,6 +42,7 @@
         if(Objects.equals(request.getParameter("Especialidad"), "")){
             nuevaEspecialidad = listado.getString("Especialidad");
         }
+
         s.executeUpdate("UPDATE Contribuyentes SET Nombre='" + nuevoNombre
                         + "',Apellidos='" + nuevoApellidos + "',Telefono='" + nuevoTelefono
                         + "',Especialidad='" + nuevaEspecialidad + "' WHERE Usuario='"
