@@ -47,7 +47,7 @@ public class HelloServlet extends HttpServlet {
             Connection conexion = nombradorBD();
             Statement s = conexion.createStatement();
 
-            return s;
+            return s;////
         }catch (Exception e){
 
         }

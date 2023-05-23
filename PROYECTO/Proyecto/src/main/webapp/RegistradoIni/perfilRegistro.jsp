@@ -31,6 +31,7 @@
     response.sendRedirect("perfilAdmin.jsp");
   }else{
     response.sendRedirect("sesion.jsp");
+    sc.setAttribute("Mensaje", "<p>Contraseña o usuario incorrecto, inténtelo de nuevo</p>");
   }
 %>
 
