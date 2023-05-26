@@ -1,7 +1,6 @@
 # JAVA
-Ejercicios de java
-  
-#¿Qué tipos de ejercicios hay?  
+Ejercicios de java  
+# ¿Qué tipos de ejercicios hay?  
 ## - Estructuradas  
 ## - Random  
 ## - For  
