@@ -1,5 +1,5 @@
 # JAVA
-Ejercicios de java  
+Ejercicios de java y documentos teórico-prácticos  
 # ¿Qué tipos de ejercicios hay?  
 ## - Estructuradas  
 ## - Random  
